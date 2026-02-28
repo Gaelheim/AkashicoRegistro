@@ -18,12 +18,12 @@ namespace CapaNegocios
             return tabla;
         }
 
-        public void InsertarCurso(string nombre, int capacidadMax, DateOnly fechaInicio)
+        public void InsertarCurso(string nombre, int capacidadMax, DateTime fechaInicio)
         {
             objeto.Insertar(nombre, capacidadMax, fechaInicio);
         }
 
-        public void EditarCurso(string cursoID, string nombre, int capacidadMax, DateOnly fechaInicio)
+        public void EditarCurso(string cursoID, string nombre, int capacidadMax, DateTime fechaInicio)
         {
             objeto.Editar(cursoID, nombre, capacidadMax, fechaInicio);
         }

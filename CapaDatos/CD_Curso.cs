@@ -26,18 +26,21 @@ namespace CapaDatos
             return tabla;
         }
 
-        public void Insertar(string nombre, int capacidadMax, DateOnly fechaInicio)
+        public void Insertar(string nombre, int capacidadMax, DateTime fechaInicio)
         {
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "INSERT INTO Curso (CursoID, Nombre, CapacidadMax, FechaInicio) VALUES ('TEMP', '"+nombre+"', "+capacidadMax+", '"+fechaInicio+"')";
+            comando.CommandText = "INSERT INTO Curso (CursoID, Nombre, CapacidadMax, FechaInicio) VALUES ('TEMP', @nombre, @capacidad, @fecha)";
             comando.CommandType = CommandType.Text;
+            comando.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombre;
+            comando.Parameters.Add("@capacidad", SqlDbType.Int).Value = capacidadMax;
+            comando.Parameters.Add("@fecha", SqlDbType.Date).Value = fechaInicio.Date;
             comando.ExecuteNonQuery();
             conexion.CerrarConexion();
 
         }
 
-        public void Editar(string cursoID, string nombre, int capacidadMax, DateOnly fechaInicio)
+        public void Editar(string cursoID, string nombre, int capacidadMax, DateTime fechaInicio)
         {
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexion.AbrirConexion();
@@ -46,8 +49,7 @@ namespace CapaDatos
             comando.Parameters.AddWithValue("@CursoID", cursoID);
             comando.Parameters.AddWithValue("@Nombre", nombre);
             comando.Parameters.AddWithValue("@CapacidadMax", capacidadMax);
-            comando.Parameters.AddWithValue("@FechaInicio", fechaInicio);
-          
+            comando.Parameters.Add("@FechaInicio", SqlDbType.Date).Value = fechaInicio.Date;
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
         }
