@@ -52,46 +52,21 @@ namespace CapaDatos
             comando.Parameters.Clear();
         }
 
-        public void ModificarEstatusA(string matricula)
+        public void Eliminar(string cursoID)
         {
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "BajaAcademica";
+            comando.CommandText = "EliminarCurso";
             comando.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@Matricula", matricula);
+            comando.Parameters.AddWithValue("@CursoID", cursoID);
 
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
 
         }
 
-        public void ActivarParticipante(string matricula)
-        {
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Activar";
-            comando.CommandType = CommandType.StoredProcedure;
-
-            comando.Parameters.AddWithValue("@Matricula", matricula);
-
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
-
-        }
-        public void ModificarEstatusM(string matricula)
-        {
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "BajaMedica";
-            comando.CommandType = CommandType.StoredProcedure;
-
-            comando.Parameters.AddWithValue("@Matricula", matricula);
-
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
-
-        }
+        
     }
 }
-}
+
