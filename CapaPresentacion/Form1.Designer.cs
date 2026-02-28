@@ -48,7 +48,7 @@
             dataGridView1.Location = new Point(26, 12);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(869, 376);
+            dataGridView1.Size = new Size(723, 427);
             dataGridView1.TabIndex = 0;
             // 
             // txtNombre
