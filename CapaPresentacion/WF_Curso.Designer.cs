@@ -40,7 +40,10 @@
             // 
             // dgvCurso
             // 
+            dgvCurso.BackgroundColor = SystemColors.ActiveCaption;
+            dgvCurso.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvCurso.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCurso.GridColor = SystemColors.ActiveCaption;
             dgvCurso.Location = new Point(12, 12);
             dgvCurso.Name = "dgvCurso";
             dgvCurso.RowHeadersWidth = 51;
@@ -56,6 +59,7 @@
             // 
             // txtNombre
             // 
+            txtNombre.Cursor = Cursors.IBeam;
             txtNombre.Location = new Point(997, 25);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(297, 27);
@@ -64,6 +68,7 @@
             // 
             // txtCapacidad
             // 
+            txtCapacidad.Cursor = Cursors.IBeam;
             txtCapacidad.Location = new Point(997, 94);
             txtCapacidad.Name = "txtCapacidad";
             txtCapacidad.Size = new Size(297, 27);
@@ -72,38 +77,45 @@
             // 
             // btnInsertar
             // 
+            btnInsertar.BackColor = Color.MediumSpringGreen;
+            btnInsertar.Cursor = Cursors.Hand;
             btnInsertar.Location = new Point(997, 232);
             btnInsertar.Name = "btnInsertar";
             btnInsertar.Size = new Size(305, 54);
             btnInsertar.TabIndex = 4;
             btnInsertar.Text = "Guardar";
-            btnInsertar.UseVisualStyleBackColor = true;
+            btnInsertar.UseVisualStyleBackColor = false;
             btnInsertar.Click += btnInsertar_Click;
             // 
             // btnEliminar
             // 
+            btnEliminar.BackColor = Color.Brown;
+            btnEliminar.Cursor = Cursors.Hand;
             btnEliminar.Location = new Point(997, 312);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(305, 48);
             btnEliminar.TabIndex = 5;
             btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
             // 
             // btnEditar
             // 
+            btnEditar.BackColor = Color.Gold;
             btnEditar.Location = new Point(30, 492);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(133, 40);
             btnEditar.TabIndex = 6;
             btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.UseVisualStyleBackColor = false;
             btnEditar.Click += btnEditar_Click;
             // 
             // WF_Curso
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
+            BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(1335, 613);
             Controls.Add(btnEditar);
             Controls.Add(btnEliminar);
