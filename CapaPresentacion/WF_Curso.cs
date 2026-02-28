@@ -106,7 +106,7 @@ namespace CapaPresentacion
             {
                 cursoID = dgvCurso.CurrentRow.Cells["CursoID"].Value.ToString();
                 curso.EliminarCurso(cursoID);
-                MessageBox.Show("Estatus modificado con exito");
+                MessageBox.Show("Curso Eliminado con exito");
                 MostrarCurso();
             }
             else
