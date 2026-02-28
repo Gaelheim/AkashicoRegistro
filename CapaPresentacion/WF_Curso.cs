@@ -16,6 +16,7 @@ namespace CapaPresentacion
     {
         Curso curso = new Curso();
         private string cursoID = null;
+        private bool Editar = false;
         public WF_Curso()
         {
             InitializeComponent();
@@ -33,20 +34,47 @@ namespace CapaPresentacion
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            
-            try
+            if (Editar == false)
             {
-                DateTime fecha = DtFecha.Value.Date;
-                curso.InsertarCurso(txtNombre.Text, int.Parse(txtCapacidad.Text), fecha);
-                MessageBox.Show("Se guardaron los datos correctamente!");
-                MostrarCurso();
-                LimpiarForm();
-                
+
+                try
+                {
+                    DateTime fecha = DtFecha.Value.Date;
+                    curso.InsertarCurso(txtNombre.Text, int.Parse(txtCapacidad.Text), fecha);
+                    MessageBox.Show("Se guardaron los datos correctamente!");
+                    MostrarCurso();
+                    LimpiarForm();
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudieron guardar los datos por: " + ex);
+                }
+
             }
-            catch (Exception ex)
+
+            if (Editar == true)
             {
-                MessageBox.Show("No se pudieron guardar los datos por: " + ex);
+
+                try
+                {
+                    DateTime fecha = DtFecha.Value.Date;
+                    curso.EditarCurso(cursoID, txtNombre.Text, int.Parse(txtCapacidad.Text), fecha);
+                    MessageBox.Show("Se editaron los datos correctamente!");
+                    MostrarCurso();
+                    LimpiarForm();
+                    Editar = false;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudieron editar los datos por: " + ex);
+                }
+
             }
+
+
         }
 
         private void LimpiarForm()
@@ -54,6 +82,37 @@ namespace CapaPresentacion
             txtNombre.Clear();
             txtCapacidad.Clear();
 
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (dgvCurso.SelectedRows.Count > 0)
+            {
+                Editar = true;
+                txtNombre.Text = dgvCurso.CurrentRow.Cells["Nombre"].Value.ToString();
+                txtCapacidad.Text = dgvCurso.CurrentRow.Cells["CapacidadMax"].Value.ToString();
+                DtFecha.Value = Convert.ToDateTime(dgvCurso.CurrentRow.Cells["FechaInicio"].Value);
+                cursoID = dgvCurso.CurrentRow.Cells["CursoID"].Value.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila, por favor");
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvCurso.SelectedRows.Count > 0)
+            {
+                cursoID = dgvCurso.CurrentRow.Cells["CursoID"].Value.ToString();
+                curso.EliminarCurso(cursoID);
+                MessageBox.Show("Estatus modificado con exito");
+                MostrarCurso();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila, por favor");
+            }
         }
     }
 }

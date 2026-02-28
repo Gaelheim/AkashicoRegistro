@@ -34,7 +34,7 @@ namespace CapaPresentacion
                     MessageBox.Show("Se guardaron los datos correctamente!");
                     Mostrarestudiante();
                     LimpiarForm();
-                    Editar = false;
+                    
                 }
                 catch (Exception ex)
                 {

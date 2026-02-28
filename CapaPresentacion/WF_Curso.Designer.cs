@@ -33,6 +33,8 @@
             txtNombre = new TextBox();
             txtCapacidad = new TextBox();
             btnInsertar = new Button();
+            btnEliminar = new Button();
+            btnEditar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCurso).BeginInit();
             SuspendLayout();
             // 
@@ -78,11 +80,33 @@
             btnInsertar.UseVisualStyleBackColor = true;
             btnInsertar.Click += btnInsertar_Click;
             // 
+            // btnEliminar
+            // 
+            btnEliminar.Location = new Point(997, 312);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(305, 48);
+            btnEliminar.TabIndex = 5;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // btnEditar
+            // 
+            btnEditar.Location = new Point(30, 492);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(133, 40);
+            btnEditar.TabIndex = 6;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
+            // 
             // WF_Curso
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1335, 613);
+            Controls.Add(btnEditar);
+            Controls.Add(btnEliminar);
             Controls.Add(btnInsertar);
             Controls.Add(txtCapacidad);
             Controls.Add(txtNombre);
@@ -103,5 +127,7 @@
         private TextBox txtNombre;
         private TextBox txtCapacidad;
         private Button btnInsertar;
+        private Button btnEliminar;
+        private Button btnEditar;
     }
 }
