@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CapaNegocios
 {
-    public class Curso
+    public class CN_Curso
     {
         private CD_Curso objeto = new CD_Curso();
         public DataTable MostrarCurso()

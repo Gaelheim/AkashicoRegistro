@@ -14,7 +14,7 @@ namespace CapaPresentacion
 
     public partial class WF_Curso : Form
     {
-        Curso curso = new Curso();
+        CN_Curso curso = new CN_Curso();
         private string cursoID = null;
         private bool Editar = false;
         public WF_Curso()
