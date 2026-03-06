@@ -34,7 +34,7 @@ namespace CapaPresentacion
                     MessageBox.Show("Se guardaron los datos correctamente!");
                     Mostrarestudiante();
                     LimpiarForm();
-                    
+
                 }
                 catch (Exception ex)
                 {
@@ -131,6 +131,27 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Seleccione una fila, por favor");
             }
+        }
+
+        private void btnCursos_Click(object sender, EventArgs e)
+        {
+            WF_Curso curso = new WF_Curso();
+            curso.Show();
+            this.Hide();
+        }
+
+        private void btnPrograma_Click(object sender, EventArgs e)
+        {
+            WF_Programa programa = new WF_Programa();
+            programa.Show();
+            this.Hide();
+        }
+
+        private void btnDocentes_Click(object sender, EventArgs e)
+        {
+            WF_Docente docente = new WF_Docente();
+            docente.Show();
+            this.Hide();
         }
     }
 }

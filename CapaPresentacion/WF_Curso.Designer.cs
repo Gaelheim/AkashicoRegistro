@@ -35,6 +35,10 @@
             btnInsertar = new Button();
             btnEliminar = new Button();
             btnEditar = new Button();
+            btnParticipantes = new Button();
+            btnProgramas = new Button();
+            btnDocentes = new Button();
+            btnInscripciones = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCurso).BeginInit();
             SuspendLayout();
             // 
@@ -44,7 +48,7 @@
             dgvCurso.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvCurso.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCurso.GridColor = SystemColors.ActiveCaption;
-            dgvCurso.Location = new Point(12, 12);
+            dgvCurso.Location = new Point(12, 162);
             dgvCurso.Name = "dgvCurso";
             dgvCurso.RowHeadersWidth = 51;
             dgvCurso.Size = new Size(846, 474);
@@ -52,7 +56,7 @@
             // 
             // DtFecha
             // 
-            DtFecha.Location = new Point(997, 167);
+            DtFecha.Location = new Point(997, 317);
             DtFecha.Name = "DtFecha";
             DtFecha.Size = new Size(297, 27);
             DtFecha.TabIndex = 1;
@@ -60,7 +64,7 @@
             // txtNombre
             // 
             txtNombre.Cursor = Cursors.IBeam;
-            txtNombre.Location = new Point(997, 25);
+            txtNombre.Location = new Point(997, 175);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(297, 27);
             txtNombre.TabIndex = 2;
@@ -69,7 +73,7 @@
             // txtCapacidad
             // 
             txtCapacidad.Cursor = Cursors.IBeam;
-            txtCapacidad.Location = new Point(997, 94);
+            txtCapacidad.Location = new Point(997, 244);
             txtCapacidad.Name = "txtCapacidad";
             txtCapacidad.Size = new Size(297, 27);
             txtCapacidad.TabIndex = 3;
@@ -79,7 +83,7 @@
             // 
             btnInsertar.BackColor = Color.MediumSpringGreen;
             btnInsertar.Cursor = Cursors.Hand;
-            btnInsertar.Location = new Point(997, 232);
+            btnInsertar.Location = new Point(997, 382);
             btnInsertar.Name = "btnInsertar";
             btnInsertar.Size = new Size(305, 54);
             btnInsertar.TabIndex = 4;
@@ -91,7 +95,7 @@
             // 
             btnEliminar.BackColor = Color.Brown;
             btnEliminar.Cursor = Cursors.Hand;
-            btnEliminar.Location = new Point(997, 312);
+            btnEliminar.Location = new Point(997, 462);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(305, 48);
             btnEliminar.TabIndex = 5;
@@ -102,7 +106,7 @@
             // btnEditar
             // 
             btnEditar.BackColor = Color.Gold;
-            btnEditar.Location = new Point(30, 492);
+            btnEditar.Location = new Point(30, 642);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(133, 40);
             btnEditar.TabIndex = 6;
@@ -110,13 +114,56 @@
             btnEditar.UseVisualStyleBackColor = false;
             btnEditar.Click += btnEditar_Click;
             // 
+            // btnParticipantes
+            // 
+            btnParticipantes.Location = new Point(12, 21);
+            btnParticipantes.Name = "btnParticipantes";
+            btnParticipantes.Size = new Size(157, 36);
+            btnParticipantes.TabIndex = 7;
+            btnParticipantes.Text = "Participantes";
+            btnParticipantes.UseVisualStyleBackColor = true;
+            btnParticipantes.Click += btnParticipantes_Click;
+            // 
+            // btnProgramas
+            // 
+            btnProgramas.Location = new Point(12, 91);
+            btnProgramas.Name = "btnProgramas";
+            btnProgramas.Size = new Size(157, 36);
+            btnProgramas.TabIndex = 8;
+            btnProgramas.Text = "Programas";
+            btnProgramas.UseVisualStyleBackColor = true;
+            btnProgramas.Click += btnProgramas_Click;
+            // 
+            // btnDocentes
+            // 
+            btnDocentes.Location = new Point(217, 21);
+            btnDocentes.Name = "btnDocentes";
+            btnDocentes.Size = new Size(157, 36);
+            btnDocentes.TabIndex = 9;
+            btnDocentes.Text = "Docentes";
+            btnDocentes.UseVisualStyleBackColor = true;
+            btnDocentes.Click += btnDocentes_Click;
+            // 
+            // btnInscripciones
+            // 
+            btnInscripciones.Location = new Point(217, 91);
+            btnInscripciones.Name = "btnInscripciones";
+            btnInscripciones.Size = new Size(157, 36);
+            btnInscripciones.TabIndex = 10;
+            btnInscripciones.Text = "Inscripciones";
+            btnInscripciones.UseVisualStyleBackColor = true;
+            // 
             // WF_Curso
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(1335, 613);
+            ClientSize = new Size(1335, 708);
+            Controls.Add(btnInscripciones);
+            Controls.Add(btnDocentes);
+            Controls.Add(btnProgramas);
+            Controls.Add(btnParticipantes);
             Controls.Add(btnEditar);
             Controls.Add(btnEliminar);
             Controls.Add(btnInsertar);
@@ -141,5 +188,9 @@
         private Button btnInsertar;
         private Button btnEliminar;
         private Button btnEditar;
+        private Button btnParticipantes;
+        private Button btnProgramas;
+        private Button btnDocentes;
+        private Button btnInscripciones;
     }
 }

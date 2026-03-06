@@ -114,5 +114,26 @@ namespace CapaPresentacion
                 MessageBox.Show("Seleccione una fila, por favor");
             }
         }
+
+        private void btnParticipantes_Click(object sender, EventArgs e)
+        {
+            Form1 participante = new Form1();
+            participante.Show();
+            this.Hide();
+        }
+
+        private void btnProgramas_Click(object sender, EventArgs e)
+        {
+            WF_Programa programa = new WF_Programa();
+            programa.Show();
+            this.Hide();
+        }
+
+        private void btnDocentes_Click(object sender, EventArgs e)
+        {
+            WF_Curso curso = new WF_Curso();
+            curso.Show();
+            this.Hide();
+        }
     }
 }

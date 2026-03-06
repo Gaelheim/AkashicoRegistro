@@ -43,7 +43,7 @@ namespace CapaPresentacion
 
                 try
                 {
-                   
+
                     docente.InsertarDocente(txtNombre.Text, txtTitulo.Text, txtCorreo.Text, txtTelefono.Text);
                     MessageBox.Show("Se guardaron los datos correctamente!");
                     MostrarDocente();
@@ -63,7 +63,7 @@ namespace CapaPresentacion
 
                 try
                 {
-                    
+
                     docente.EditarDocente(docenteID, txtNombre.Text, txtTitulo.Text, txtCorreo.Text, txtTelefono.Text);
                     MessageBox.Show("Se editaron los datos correctamente!");
                     MostrarDocente();
@@ -103,6 +103,27 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Seleccione una fila, por favor");
             }
+        }
+
+        private void btnParticipantes_Click(object sender, EventArgs e)
+        {
+            Form1 participante = new Form1();
+            participante.Show();
+            this.Hide();
+        }
+
+        private void btnCursos_Click(object sender, EventArgs e)
+        {
+            WF_Curso curso = new WF_Curso();
+            curso.Show();
+            this.Hide();
+        }
+
+        private void btnPrograma_Click(object sender, EventArgs e)
+        {
+            WF_Programa programa = new WF_Programa();
+            programa.Show();
+            this.Hide();
         }
     }
 }
