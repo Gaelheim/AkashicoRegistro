@@ -95,7 +95,7 @@ namespace CapaPresentacion
                     string dia = cbxDias.SelectedItem.ToString();
                     TimeSpan horario = TimeSpan.Parse(txtHorario.Text);
 
-                    programa.InsertarEstudiante(nombre, cursoID, docenteID, duracion_Semana, dia, horario);
+                    programa.InsertarPrograma(nombre, cursoID, docenteID, duracion_Semana, dia, horario);
 
                     MessageBox.Show("Programa guardado correctamente!");
                     MostrarPrograma();
@@ -118,7 +118,7 @@ namespace CapaPresentacion
                     string dia = cbxDias.SelectedItem.ToString();
                     TimeSpan horario = TimeSpan.Parse(txtHorario.Text);
 
-                    programa.EditarParticipante(programaID, nombre, cursoID, docenteID, duracion_Semana, dia, horario);
+                    programa.EditarPrograma(programaID, nombre, cursoID, docenteID, duracion_Semana, dia, horario);
                     MessageBox.Show("Programa editado correctamente!");
                     MostrarPrograma();
                     LimpiarForm();
@@ -179,6 +179,22 @@ namespace CapaPresentacion
             Form1 participantes = new Form1();
             participantes.Show();
             this.Hide();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvPrograma.Rows.Count > 0)
+            {
+                string codigoPrograma = dgvPrograma.CurrentRow.Cells["CodigoPrograma"].Value.ToString();
+                programa.EliminarPrograma(codigoPrograma);
+                MessageBox.Show("Programa eliminado correctamente!");
+                MostrarPrograma();
+            }
+            else
+            {
+                MessageBox.Show("No hay datos para eliminar.");
+            }
+
         }
     }
 }

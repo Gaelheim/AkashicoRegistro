@@ -44,14 +44,19 @@ namespace CapaNegocios
             tabla2 = objeto.ObtenerCursos();
             return tabla2;
         }
-        public void InsertarEstudiante(string nombre, string cursoID, int docenteID, int duracion_Semana, string dia, TimeSpan horario)
+        public void InsertarPrograma(string nombre, string cursoID, int docenteID, int duracion_Semana, string dia, TimeSpan horario)
         {
             objeto.Insertar(nombre, cursoID, docenteID, duracion_Semana, dia, horario);
         }
 
-       public void EditarParticipante(string codigoPrograma, string nombre, string cursoID, int docenteID, int duracion_Semana, string dia, TimeSpan horario)
+       public void EditarPrograma(string codigoPrograma, string nombre, string cursoID, int docenteID, int duracion_Semana, string dia, TimeSpan horario)
         {
             objeto.Editar(codigoPrograma, nombre, cursoID, docenteID, duracion_Semana, dia, horario);
+        }
+
+        public void EliminarPrograma(string codigoPrograma)
+        {
+            objeto.Eliminar(codigoPrograma);
         }
     }
 }

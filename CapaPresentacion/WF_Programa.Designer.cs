@@ -49,12 +49,13 @@
             btnWfcurso = new Button();
             btnWfDocente = new Button();
             btnParticipantes = new Button();
-            button4 = new Button();
+            btnEliminar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvPrograma).BeginInit();
             SuspendLayout();
             // 
             // dgvPrograma
             // 
+            dgvPrograma.BackgroundColor = SystemColors.GradientInactiveCaption;
             dgvPrograma.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPrograma.Location = new Point(12, 107);
             dgvPrograma.Name = "dgvPrograma";
@@ -146,32 +147,35 @@
             // 
             // btnDocente
             // 
+            btnDocente.BackColor = SystemColors.GradientActiveCaption;
             btnDocente.Location = new Point(12, 676);
             btnDocente.Name = "btnDocente";
             btnDocente.Size = new Size(242, 29);
             btnDocente.TabIndex = 11;
             btnDocente.Text = "Cargar Docentes";
-            btnDocente.UseVisualStyleBackColor = true;
+            btnDocente.UseVisualStyleBackColor = false;
             btnDocente.Click += btnDocente_Click;
             // 
             // btnCurso
             // 
+            btnCurso.BackColor = SystemColors.GradientActiveCaption;
             btnCurso.Location = new Point(291, 676);
             btnCurso.Name = "btnCurso";
             btnCurso.Size = new Size(242, 29);
             btnCurso.TabIndex = 12;
             btnCurso.Text = "Cargar Cursos";
-            btnCurso.UseVisualStyleBackColor = true;
+            btnCurso.UseVisualStyleBackColor = false;
             btnCurso.Click += btnCurso_Click;
             // 
             // btnPrograma
             // 
+            btnPrograma.BackColor = SystemColors.GradientActiveCaption;
             btnPrograma.Location = new Point(558, 676);
             btnPrograma.Name = "btnPrograma";
             btnPrograma.Size = new Size(242, 29);
             btnPrograma.TabIndex = 13;
             btnPrograma.Text = "Cargar Programas";
-            btnPrograma.UseVisualStyleBackColor = true;
+            btnPrograma.UseVisualStyleBackColor = false;
             btnPrograma.Click += btnPrograma_Click;
             // 
             // cbxDias
@@ -194,69 +198,77 @@
             // 
             // btnGuardar
             // 
+            btnGuardar.BackColor = Color.Aquamarine;
             btnGuardar.Location = new Point(993, 654);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(94, 29);
             btnGuardar.TabIndex = 16;
             btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
             // 
             // btnEditar
             // 
+            btnEditar.BackColor = SystemColors.Info;
             btnEditar.Location = new Point(1111, 654);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(94, 29);
             btnEditar.TabIndex = 17;
             btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.UseVisualStyleBackColor = false;
             btnEditar.Click += btnEditar_Click;
             // 
             // btnWfcurso
             // 
+            btnWfcurso.BackColor = SystemColors.ActiveCaption;
             btnWfcurso.Location = new Point(24, 38);
             btnWfcurso.Name = "btnWfcurso";
             btnWfcurso.Size = new Size(94, 29);
             btnWfcurso.TabIndex = 18;
             btnWfcurso.Text = "Cursos";
-            btnWfcurso.UseVisualStyleBackColor = true;
+            btnWfcurso.UseVisualStyleBackColor = false;
             btnWfcurso.Click += btnWfcurso_Click;
             // 
             // btnWfDocente
             // 
-            btnWfDocente.Location = new Point(160, 38);
+            btnWfDocente.BackColor = SystemColors.ActiveCaption;
+            btnWfDocente.Location = new Point(146, 38);
             btnWfDocente.Name = "btnWfDocente";
             btnWfDocente.Size = new Size(94, 29);
             btnWfDocente.TabIndex = 19;
             btnWfDocente.Text = "Docentes";
-            btnWfDocente.UseVisualStyleBackColor = true;
+            btnWfDocente.UseVisualStyleBackColor = false;
             btnWfDocente.Click += btnWfDocente_Click;
             // 
             // btnParticipantes
             // 
-            btnParticipantes.Location = new Point(280, 38);
+            btnParticipantes.BackColor = SystemColors.ActiveCaption;
+            btnParticipantes.Location = new Point(270, 38);
             btnParticipantes.Name = "btnParticipantes";
             btnParticipantes.Size = new Size(132, 29);
             btnParticipantes.TabIndex = 20;
             btnParticipantes.Text = "Participantes";
-            btnParticipantes.UseVisualStyleBackColor = true;
+            btnParticipantes.UseVisualStyleBackColor = false;
             btnParticipantes.Click += btnParticipantes_Click;
             // 
-            // button4
+            // btnEliminar
             // 
-            button4.Location = new Point(439, 38);
-            button4.Name = "button4";
-            button4.Size = new Size(94, 29);
-            button4.TabIndex = 21;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
+            btnEliminar.BackColor = Color.LightCoral;
+            btnEliminar.Location = new Point(1234, 654);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(94, 29);
+            btnEliminar.TabIndex = 21;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // WF_Programa
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.InactiveCaption;
             ClientSize = new Size(1355, 743);
-            Controls.Add(button4);
+            Controls.Add(btnEliminar);
             Controls.Add(btnParticipantes);
             Controls.Add(btnWfDocente);
             Controls.Add(btnWfcurso);
@@ -309,6 +321,6 @@
         private Button btnWfcurso;
         private Button btnWfDocente;
         private Button btnParticipantes;
-        private Button button4;
+        private Button btnEliminar;
     }
 }

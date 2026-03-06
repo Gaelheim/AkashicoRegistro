@@ -104,6 +104,17 @@ namespace CapaDatos
              comando.Parameters.Add("@Horario", SqlDbType.Time).Value = horario;
              comando.ExecuteNonQuery();
              comando.Parameters.Clear();
-         } 
+         }
+
+        public void Eliminar(string codigoPrograma)
+        {
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "Delete From Programa where CodigoPrograma = '"+codigoPrograma+"'";
+            comando.CommandType = CommandType.Text;
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+
+        }
     }
 }
