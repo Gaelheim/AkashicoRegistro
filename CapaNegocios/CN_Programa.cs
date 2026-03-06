@@ -18,6 +18,19 @@ namespace CapaNegocios
             return tabla;
         }
 
+        public DataTable MostrarDocentes()
+        {
+            DataTable tabla3 = new DataTable();
+            tabla3 = objeto.MostrarDocente();
+            return tabla3;
+        }
+
+        public DataTable MostrarCursos()
+        {
+            DataTable tabla4 = new DataTable();
+            tabla4 = objeto.MostrarCurso();
+            return tabla4;
+        }
         public DataTable MostrarDocente()
         {
             DataTable tabla1 = new DataTable();
@@ -36,9 +49,9 @@ namespace CapaNegocios
             objeto.Insertar(nombre, cursoID, docenteID, duracion_Semana, dia, horario);
         }
 
-       /* public void EditarParticipante(string matricula, string nombre, string apellido, string cedula, string correo, string telefono)
+       public void EditarParticipante(string codigoPrograma, string nombre, string cursoID, int docenteID, int duracion_Semana, string dia, TimeSpan horario)
         {
-            objeto.Editar(matricula, nombre, apellido, cedula, correo, telefono);
-        } */
+            objeto.Editar(codigoPrograma, nombre, cursoID, docenteID, duracion_Semana, dia, horario);
+        }
     }
 }

@@ -16,6 +16,7 @@ namespace CapaPresentacion
     {
         CN_Programa programa = new CN_Programa();
         private bool Editar = false;
+        private string programaID = null;
         public WF_Programa()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace CapaPresentacion
             MostrarPrograma();
             CargarCursos();
             CargarDocentes();
+
         }
 
         private void MostrarPrograma()
@@ -52,6 +54,131 @@ namespace CapaPresentacion
             cbxCurso.DisplayMember = "Nombre";    // lo que VE el usuario
             cbxCurso.ValueMember = "CursoID";   // lo que usa el código
             cbxCurso.SelectedIndex = -1;          // inicia vacío
+        }
+
+        private void MostrarDocentes()
+        {
+            dgvPrograma.DataSource = programa.MostrarDocentes();
+        }
+
+        private void btnDocente_Click(object sender, EventArgs e)
+        {
+            MostrarDocentes();
+        }
+
+        private void MostrarCursos()
+        {
+            dgvPrograma.DataSource = programa.MostrarCursos();
+        }
+
+        private void btnCurso_Click(object sender, EventArgs e)
+        {
+            MostrarCursos();
+        }
+
+        private void btnPrograma_Click(object sender, EventArgs e)
+        {
+            MostrarPrograma();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (Editar == false)
+
+            {
+                try
+                {
+                    string nombre = txtNombre.Text;
+                    string cursoID = cbxCurso.SelectedValue.ToString();
+                    int docenteID = Convert.ToInt32(cbxDocente.SelectedValue);
+                    int duracion_Semana = Convert.ToInt32(txtDuracion.Text);
+                    string dia = cbxDias.SelectedItem.ToString();
+                    TimeSpan horario = TimeSpan.Parse(txtHorario.Text);
+
+                    programa.InsertarEstudiante(nombre, cursoID, docenteID, duracion_Semana, dia, horario);
+
+                    MessageBox.Show("Programa guardado correctamente!");
+                    MostrarPrograma();
+                    LimpiarForm();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo guardar por: " + ex.Message);
+                }
+            }
+
+            if (Editar == true)
+            {
+                try
+                {
+                    string nombre = txtNombre.Text;
+                    string cursoID = cbxCurso.SelectedValue.ToString();
+                    int docenteID = Convert.ToInt32(cbxDocente.SelectedValue);
+                    int duracion_Semana = Convert.ToInt32(txtDuracion.Text);
+                    string dia = cbxDias.SelectedItem.ToString();
+                    TimeSpan horario = TimeSpan.Parse(txtHorario.Text);
+
+                    programa.EditarParticipante(programaID, nombre, cursoID, docenteID, duracion_Semana, dia, horario);
+                    MessageBox.Show("Programa editado correctamente!");
+                    MostrarPrograma();
+                    LimpiarForm();
+                    Editar = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo editar por: " + ex.Message);
+                }
+            }
+
+        }
+
+        private void LimpiarForm()
+        {
+            txtNombre.Clear();
+            cbxCurso.SelectedIndex = -1;
+            cbxDocente.SelectedIndex = -1;
+            txtDuracion.Clear();
+            cbxDias.SelectedIndex = -1;
+            txtHorario.Clear();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (dgvPrograma.Rows.Count > 0)
+            {
+
+                Editar = true;
+                txtNombre.Text = dgvPrograma.CurrentRow.Cells["NombrePrograma"].Value.ToString();
+                cbxCurso.SelectedValue = dgvPrograma.CurrentRow.Cells["CursoID"].Value;
+                cbxDocente.SelectedValue = dgvPrograma.CurrentRow.Cells["DocenteID"].Value;
+                txtDuracion.Text = dgvPrograma.CurrentRow.Cells["Duracion_Semana"].Value.ToString();
+                cbxDias.SelectedItem = dgvPrograma.CurrentRow.Cells["Dia"].Value.ToString();
+                txtHorario.Text = dgvPrograma.CurrentRow.Cells["Horario"].Value.ToString();
+                programaID = dgvPrograma.CurrentRow.Cells["CodigoPrograma"].Value.ToString();
+
+            }
+            else { MessageBox.Show("No hay datos para editar."); }
+        }
+
+        private void btnWfcurso_Click(object sender, EventArgs e)
+        {
+            WF_Curso curso = new WF_Curso();
+            curso.Show();
+            this.Hide();
+        }
+
+        private void btnWfDocente_Click(object sender, EventArgs e)
+        {
+            WF_Docente docente = new WF_Docente();
+            docente.Show();
+            this.Hide();
+        }
+
+        private void btnParticipantes_Click(object sender, EventArgs e)
+        {
+            Form1 participantes = new Form1();
+            participantes.Show();
+            this.Hide();
         }
     }
 }

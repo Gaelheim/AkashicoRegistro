@@ -52,6 +52,30 @@ namespace CapaDatos
   
         }
 
+        public DataTable MostrarDocente()
+        {
+            SqlCommand comando = new SqlCommand();
+            DataTable tabla3 = new DataTable();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "sp_ObtenerDocente";
+            SqlDataReader leer = comando.ExecuteReader();
+            tabla3.Load(leer);
+            conexion.CerrarConexion();
+            return tabla3;
+        }
+
+        public DataTable MostrarCurso()
+        {
+            SqlCommand comando = new SqlCommand();
+            DataTable tabla4 = new DataTable();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "sp_ObtenerCursos";
+            SqlDataReader leer = comando.ExecuteReader();
+            tabla4.Load(leer);
+            conexion.CerrarConexion();
+            return tabla4;
+        }
+
         public void Insertar(string nombre, string cursoID, int docenteID, int duracion_Semana, string dia, TimeSpan horario)
         {
             SqlCommand comando = new SqlCommand();
@@ -65,20 +89,21 @@ namespace CapaDatos
 
        
 
-        /* public void Editar(string matricula, string nombre, string apellido, string cedula, string correo, string telefono)
+        public void Editar(string codigoPrograma, string nombre, string cursoID, int docenteID, int duracion_Semana, string dia, TimeSpan horario)
          {
              SqlCommand comando = new SqlCommand();
              comando.Connection = conexion.AbrirConexion();
-             comando.CommandText = "EditarParticipante";
+             comando.CommandText = "EditarPrograma";
              comando.CommandType = CommandType.StoredProcedure;
-             comando.Parameters.AddWithValue("@Matricula", matricula);
+             comando.Parameters.AddWithValue("@CodigoPrograma", codigoPrograma);
              comando.Parameters.AddWithValue("@Nombre", nombre);
-             comando.Parameters.AddWithValue("@Apellido", apellido);
-             comando.Parameters.AddWithValue("@Cedula", cedula);
-             comando.Parameters.AddWithValue("@Correo", correo);
-             comando.Parameters.AddWithValue("@Telefono", telefono);
+             comando.Parameters.AddWithValue("@CursoID", cursoID);
+             comando.Parameters.AddWithValue("@DocenteID", docenteID);
+             comando.Parameters.AddWithValue("@Duracion_Semana", duracion_Semana);
+             comando.Parameters.AddWithValue("@Dia", dia);
+             comando.Parameters.Add("@Horario", SqlDbType.Time).Value = horario;
              comando.ExecuteNonQuery();
              comando.Parameters.Clear();
-         } */
+         } 
     }
 }
