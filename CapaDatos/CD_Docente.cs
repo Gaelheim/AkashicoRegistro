@@ -11,7 +11,8 @@ namespace CapaDatos
 {
    public class CD_Docente
     {
-        private CD_Conexion conexion = new CD_Conexion(); //instancia de la capa Conexion de datos, para poder hacer uso de nuestra cadena que llama la base de datos.
+        private CD_Conexion conexion = new CD_Conexion(); 
+        //instancia de la capa Conexion de datos, para poder hacer uso de nuestra cadena que llama la base de datos.
 
 
         //metodo para mostrar los datos de nuestra base de dato

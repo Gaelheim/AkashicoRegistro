@@ -177,6 +177,7 @@
             btnInscripciones.TabIndex = 14;
             btnInscripciones.Text = "Inscripciones";
             btnInscripciones.UseVisualStyleBackColor = true;
+            btnInscripciones.Click += btnInscripciones_Click;
             // 
             // WF_Docente
             // 

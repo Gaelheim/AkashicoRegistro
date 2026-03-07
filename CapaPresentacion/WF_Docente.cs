@@ -125,5 +125,12 @@ namespace CapaPresentacion
             programa.Show();
             this.Hide();
         }
+
+        private void btnInscripciones_Click(object sender, EventArgs e)
+        {
+            WF_Inscripciones inscripciones = new WF_Inscripciones();
+            inscripciones.Show();
+            this.Hide();
+        }
     }
 }
