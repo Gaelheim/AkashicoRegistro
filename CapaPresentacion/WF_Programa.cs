@@ -93,7 +93,7 @@ namespace CapaPresentacion
                     int docenteID = Convert.ToInt32(cbxDocente.SelectedValue);
                     int duracion_Semana = Convert.ToInt32(txtDuracion.Text);
                     string dia = cbxDias.SelectedItem.ToString();
-                    TimeSpan horario = TimeSpan.Parse(txtHorario.Text);
+                    TimeSpan horario = TimeSpan.Parse(cbxHorario.SelectedItem.ToString());
 
                     programa.InsertarPrograma(nombre, cursoID, docenteID, duracion_Semana, dia, horario);
 
@@ -116,7 +116,7 @@ namespace CapaPresentacion
                     int docenteID = Convert.ToInt32(cbxDocente.SelectedValue);
                     int duracion_Semana = Convert.ToInt32(txtDuracion.Text);
                     string dia = cbxDias.SelectedItem.ToString();
-                    TimeSpan horario = TimeSpan.Parse(txtHorario.Text);
+                    TimeSpan horario = TimeSpan.Parse(cbxHorario.SelectedItem.ToString());
 
                     programa.EditarPrograma(programaID, nombre, cursoID, docenteID, duracion_Semana, dia, horario);
                     MessageBox.Show("Programa editado correctamente!");
@@ -139,7 +139,7 @@ namespace CapaPresentacion
             cbxDocente.SelectedIndex = -1;
             txtDuracion.Clear();
             cbxDias.SelectedIndex = -1;
-            txtHorario.Clear();
+            cbxHorario.SelectedIndex = -1;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -153,7 +153,7 @@ namespace CapaPresentacion
                 cbxDocente.SelectedValue = dgvPrograma.CurrentRow.Cells["DocenteID"].Value;
                 txtDuracion.Text = dgvPrograma.CurrentRow.Cells["Duracion_Semana"].Value.ToString();
                 cbxDias.SelectedItem = dgvPrograma.CurrentRow.Cells["Dia"].Value.ToString();
-                txtHorario.Text = dgvPrograma.CurrentRow.Cells["Horario"].Value.ToString();
+                cbxHorario.SelectedItem = dgvPrograma.CurrentRow.Cells["Horario"].Value.ToString();
                 programaID = dgvPrograma.CurrentRow.Cells["CodigoPrograma"].Value.ToString();
 
             }

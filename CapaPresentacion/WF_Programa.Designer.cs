@@ -31,7 +31,6 @@
             dgvPrograma = new DataGridView();
             txtNombre = new TextBox();
             txtDuracion = new TextBox();
-            txtHorario = new TextBox();
             cbxCurso = new ComboBox();
             cbxDocente = new ComboBox();
             label1 = new Label();
@@ -50,6 +49,7 @@
             btnWfDocente = new Button();
             btnParticipantes = new Button();
             btnEliminar = new Button();
+            cbxHorario = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvPrograma).BeginInit();
             SuspendLayout();
             // 
@@ -76,13 +76,6 @@
             txtDuracion.Name = "txtDuracion";
             txtDuracion.Size = new Size(219, 27);
             txtDuracion.TabIndex = 2;
-            // 
-            // txtHorario
-            // 
-            txtHorario.Location = new Point(1050, 579);
-            txtHorario.Name = "txtHorario";
-            txtHorario.Size = new Size(219, 27);
-            txtHorario.TabIndex = 3;
             // 
             // cbxCurso
             // 
@@ -262,12 +255,22 @@
             btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
             // 
+            // cbxHorario
+            // 
+            cbxHorario.FormattingEnabled = true;
+            cbxHorario.Items.AddRange(new object[] { "00:00", "00:30", "01:00", "01:30", "02:00", "02:30", "03:00", "03:30", "04:00", "04:30", "05:00", "05:30", "06:00", "06:30", "07:00", "07:30", "08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30", "23:00", "23:30" });
+            cbxHorario.Location = new Point(1050, 586);
+            cbxHorario.Name = "cbxHorario";
+            cbxHorario.Size = new Size(219, 28);
+            cbxHorario.TabIndex = 22;
+            // 
             // WF_Programa
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveCaption;
             ClientSize = new Size(1355, 743);
+            Controls.Add(cbxHorario);
             Controls.Add(btnEliminar);
             Controls.Add(btnParticipantes);
             Controls.Add(btnWfDocente);
@@ -286,7 +289,6 @@
             Controls.Add(label1);
             Controls.Add(cbxDocente);
             Controls.Add(cbxCurso);
-            Controls.Add(txtHorario);
             Controls.Add(txtDuracion);
             Controls.Add(txtNombre);
             Controls.Add(dgvPrograma);
@@ -303,7 +305,6 @@
         private DataGridView dgvPrograma;
         private TextBox txtNombre;
         private TextBox txtDuracion;
-        private TextBox txtHorario;
         private ComboBox cbxCurso;
         private ComboBox cbxDocente;
         private Label label1;
@@ -322,5 +323,6 @@
         private Button btnWfDocente;
         private Button btnParticipantes;
         private Button btnEliminar;
+        private ComboBox cbxHorario;
     }
 }
