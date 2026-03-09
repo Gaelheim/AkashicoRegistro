@@ -59,6 +59,7 @@
             // txtNombre
             // 
             txtNombre.Location = new Point(964, 204);
+            txtNombre.MaxLength = 50;
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(258, 27);
             txtNombre.TabIndex = 1;
@@ -67,6 +68,7 @@
             // txtApellido
             // 
             txtApellido.Location = new Point(964, 265);
+            txtApellido.MaxLength = 50;
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(258, 27);
             txtApellido.TabIndex = 2;
@@ -75,6 +77,7 @@
             // txtCedula
             // 
             txtCedula.Location = new Point(964, 325);
+            txtCedula.MaxLength = 20;
             txtCedula.Name = "txtCedula";
             txtCedula.Size = new Size(258, 27);
             txtCedula.TabIndex = 3;
@@ -83,6 +86,7 @@
             // txtCorreo
             // 
             txtCorreo.Location = new Point(964, 377);
+            txtCorreo.MaxLength = 90;
             txtCorreo.Name = "txtCorreo";
             txtCorreo.Size = new Size(258, 27);
             txtCorreo.TabIndex = 4;
@@ -91,6 +95,7 @@
             // txtTelefono
             // 
             txtTelefono.Location = new Point(964, 436);
+            txtTelefono.MaxLength = 15;
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(258, 27);
             txtTelefono.TabIndex = 5;

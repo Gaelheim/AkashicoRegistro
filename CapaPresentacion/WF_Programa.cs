@@ -196,5 +196,21 @@ namespace CapaPresentacion
             }
 
         }
+
+        private void txtDuracion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Evitar que se ingrese el carácter
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true; // Evitar que se ingrese el carácter
+            }
+        }
     }
 }

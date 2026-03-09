@@ -47,6 +47,7 @@
             // 
             // cbxParticipante
             // 
+            cbxParticipante.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxParticipante.FormattingEnabled = true;
             cbxParticipante.Location = new Point(1062, 101);
             cbxParticipante.Name = "cbxParticipante";
@@ -55,6 +56,7 @@
             // 
             // cbxCurso
             // 
+            cbxCurso.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxCurso.FormattingEnabled = true;
             cbxCurso.Location = new Point(1062, 199);
             cbxCurso.Name = "cbxCurso";
