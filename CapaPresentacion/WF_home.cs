@@ -17,7 +17,7 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void button4_Click(object sender, EventArgs e) // Inscripciones
+        private void btnInscripciones_Click(object sender, EventArgs e) // Inscripciones
         {
             WF_Inscripciones_Centro inscripciones_Centro = new WF_Inscripciones_Centro();
             inscripciones_Centro.Show();

@@ -31,13 +31,13 @@
             panel1 = new Panel();
             label1 = new Label();
             panel2 = new Panel();
-            button5 = new Button();
+            btnReportes = new Button();
             button2 = new Button();
-            button1 = new Button();
+            btnParticipantes = new Button();
             panel3 = new Panel();
             button6 = new Button();
             button3 = new Button();
-            Inscripciones = new Button();
+            btnInscripciones = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -65,9 +65,9 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(button5);
+            panel2.Controls.Add(btnReportes);
             panel2.Controls.Add(button2);
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(btnParticipantes);
             panel2.Location = new Point(396, 82);
             panel2.Name = "panel2";
             panel2.Size = new Size(415, 482);
@@ -75,16 +75,16 @@
             // 
             // button5
             // 
-            button5.BackColor = SystemColors.GradientActiveCaption;
-            button5.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            button5.Image = Properties.Resources.grafico_histograma;
-            button5.Location = new Point(71, 333);
-            button5.Name = "button5";
-            button5.Size = new Size(268, 106);
-            button5.TabIndex = 2;
-            button5.Text = "Reportes";
-            button5.TextAlign = ContentAlignment.BottomCenter;
-            button5.UseVisualStyleBackColor = false;
+            btnReportes.BackColor = SystemColors.GradientActiveCaption;
+            btnReportes.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            btnReportes.Image = Properties.Resources.grafico_histograma;
+            btnReportes.Location = new Point(71, 333);
+            btnReportes.Name = "btnReportes";
+            btnReportes.Size = new Size(268, 106);
+            btnReportes.TabIndex = 2;
+            btnReportes.Text = "Reportes";
+            btnReportes.TextAlign = ContentAlignment.BottomCenter;
+            btnReportes.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
@@ -101,22 +101,22 @@
             // 
             // button1
             // 
-            button1.BackColor = SystemColors.GradientActiveCaption;
-            button1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            button1.Image = Properties.Resources.agregar_usuario;
-            button1.Location = new Point(71, 78);
-            button1.Name = "button1";
-            button1.Size = new Size(268, 106);
-            button1.TabIndex = 0;
-            button1.Text = "Participantes";
-            button1.TextAlign = ContentAlignment.BottomCenter;
-            button1.UseVisualStyleBackColor = false;
+            btnParticipantes.BackColor = SystemColors.GradientActiveCaption;
+            btnParticipantes.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            btnParticipantes.Image = Properties.Resources.agregar_usuario;
+            btnParticipantes.Location = new Point(71, 78);
+            btnParticipantes.Name = "button1";
+            btnParticipantes.Size = new Size(268, 106);
+            btnParticipantes.TabIndex = 0;
+            btnParticipantes.Text = "Participantes";
+            btnParticipantes.TextAlign = ContentAlignment.BottomCenter;
+            btnParticipantes.UseVisualStyleBackColor = false;
             // 
             // panel3
             // 
             panel3.Controls.Add(button6);
             panel3.Controls.Add(button3);
-            panel3.Controls.Add(Inscripciones);
+            panel3.Controls.Add(btnInscripciones);
             panel3.Location = new Point(0, 82);
             panel3.Name = "panel3";
             panel3.Size = new Size(390, 482);
@@ -151,17 +151,17 @@
             // 
             // Inscripciones
             // 
-            Inscripciones.BackColor = SystemColors.GradientActiveCaption;
-            Inscripciones.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold);
-            Inscripciones.Image = Properties.Resources.editar__1_;
-            Inscripciones.Location = new Point(58, 78);
-            Inscripciones.Name = "Inscripciones";
-            Inscripciones.Size = new Size(268, 106);
-            Inscripciones.TabIndex = 3;
-            Inscripciones.Text = "Inscripciones";
-            Inscripciones.TextAlign = ContentAlignment.BottomCenter;
-            Inscripciones.UseVisualStyleBackColor = false;
-            Inscripciones.Click += button4_Click;
+            btnInscripciones.BackColor = SystemColors.GradientActiveCaption;
+            btnInscripciones.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold);
+            btnInscripciones.Image = Properties.Resources.editar__1_;
+            btnInscripciones.Location = new Point(58, 78);
+            btnInscripciones.Name = "btnInscripciones";
+            btnInscripciones.Size = new Size(268, 106);
+            btnInscripciones.TabIndex = 3;
+            btnInscripciones.Text = "Inscripciones";
+            btnInscripciones.TextAlign = ContentAlignment.BottomCenter;
+            btnInscripciones.UseVisualStyleBackColor = false;
+            btnInscripciones.Click += btnInscripciones_Click;
             // 
             // WF_home
             // 
@@ -186,12 +186,12 @@
         private Panel panel1;
         private Label label1;
         private Panel panel2;
-        private Button button5;
+        private Button btnReportes;
         private Button button2;
-        private Button button1;
+        private Button btnParticipantes;
         private Panel panel3;
         private Button button6;
         private Button button3;
-        private Button Inscripciones;
+        private Button btnInscripciones;
     }
 }
