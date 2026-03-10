@@ -43,6 +43,7 @@
             btnCursos = new Button();
             btnPrograma = new Button();
             btnInscripciones = new Button();
+            btnHome = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvDocente).BeginInit();
             SuspendLayout();
             // 
@@ -68,6 +69,7 @@
             // txtNombre
             // 
             txtNombre.Location = new Point(983, 202);
+            txtNombre.MaxLength = 100;
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(260, 27);
             txtNombre.TabIndex = 2;
@@ -76,6 +78,7 @@
             // txtTitulo
             // 
             txtTitulo.Location = new Point(983, 302);
+            txtTitulo.MaxLength = 100;
             txtTitulo.Name = "txtTitulo";
             txtTitulo.Size = new Size(260, 27);
             txtTitulo.TabIndex = 4;
@@ -110,6 +113,7 @@
             // txtCorreo
             // 
             txtCorreo.Location = new Point(983, 401);
+            txtCorreo.MaxLength = 100;
             txtCorreo.Name = "txtCorreo";
             txtCorreo.Size = new Size(260, 27);
             txtCorreo.TabIndex = 6;
@@ -191,12 +195,24 @@
             btnInscripciones.UseVisualStyleBackColor = false;
             btnInscripciones.Click += btnInscripciones_Click;
             // 
+            // btnHome
+            // 
+            btnHome.BackColor = SystemColors.GradientActiveCaption;
+            btnHome.Image = Properties.Resources.salir_alt;
+            btnHome.Location = new Point(1191, 12);
+            btnHome.Name = "btnHome";
+            btnHome.Size = new Size(61, 58);
+            btnHome.TabIndex = 15;
+            btnHome.UseVisualStyleBackColor = false;
+            btnHome.Click += btnHome_Click;
+            // 
             // WF_Docente
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(1277, 733);
+            Controls.Add(btnHome);
             Controls.Add(btnInscripciones);
             Controls.Add(btnPrograma);
             Controls.Add(btnCursos);
@@ -237,5 +253,6 @@
         private Button btnCursos;
         private Button btnPrograma;
         private Button btnInscripciones;
+        private Button btnHome;
     }
 }

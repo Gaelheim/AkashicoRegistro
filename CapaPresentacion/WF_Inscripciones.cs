@@ -88,5 +88,12 @@ namespace CapaPresentacion
                 MessageBox.Show("No hay datos para eliminar.");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e) //boton para volver al menu principal
+        {
+            WF_Inscripciones_Centro inscripciones_Centro = new WF_Inscripciones_Centro();
+            inscripciones_Centro.Show();
+            this.Close();
+        }
     }
 }

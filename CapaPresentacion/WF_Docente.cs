@@ -112,28 +112,28 @@ namespace CapaPresentacion
         {
             Form1 participante = new Form1();
             participante.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnCursos_Click(object sender, EventArgs e)
         {
             WF_Curso curso = new WF_Curso();
             curso.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnPrograma_Click(object sender, EventArgs e)
         {
             WF_Programa programa = new WF_Programa();
             programa.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnInscripciones_Click(object sender, EventArgs e)
         {
-            WF_Inscripciones inscripciones = new WF_Inscripciones();
+            WF_Inscripciones_Centro inscripciones = new WF_Inscripciones_Centro();
             inscripciones.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -236,6 +236,13 @@ namespace CapaPresentacion
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            WF_home home = new WF_home();
+            home.Show();
+            this.Close();
         }
     }
 }

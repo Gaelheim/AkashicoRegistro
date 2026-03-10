@@ -50,6 +50,8 @@
             btnParticipantes = new Button();
             btnEliminar = new Button();
             cbxHorario = new ComboBox();
+            button1 = new Button();
+            btnHome = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvPrograma).BeginInit();
             SuspendLayout();
             // 
@@ -66,6 +68,7 @@
             // txtNombre
             // 
             txtNombre.Location = new Point(1050, 131);
+            txtNombre.MaxLength = 100;
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(219, 27);
             txtNombre.TabIndex = 1;
@@ -74,6 +77,7 @@
             // txtDuracion
             // 
             txtDuracion.Location = new Point(1050, 400);
+            txtDuracion.MaxLength = 2;
             txtDuracion.Name = "txtDuracion";
             txtDuracion.Size = new Size(219, 27);
             txtDuracion.TabIndex = 2;
@@ -270,12 +274,36 @@
             cbxHorario.Size = new Size(219, 28);
             cbxHorario.TabIndex = 22;
             // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.ActiveCaption;
+            button1.Location = new Point(422, 38);
+            button1.Name = "button1";
+            button1.Size = new Size(120, 29);
+            button1.TabIndex = 23;
+            button1.Text = "Inscripciones";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // btnHome
+            // 
+            btnHome.BackColor = SystemColors.GradientActiveCaption;
+            btnHome.Image = Properties.Resources.salir_alt;
+            btnHome.Location = new Point(1282, 12);
+            btnHome.Name = "btnHome";
+            btnHome.Size = new Size(61, 58);
+            btnHome.TabIndex = 24;
+            btnHome.UseVisualStyleBackColor = false;
+            btnHome.Click += btnHome_Click;
+            // 
             // WF_Programa
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveCaption;
             ClientSize = new Size(1355, 743);
+            Controls.Add(btnHome);
+            Controls.Add(button1);
             Controls.Add(cbxHorario);
             Controls.Add(btnEliminar);
             Controls.Add(btnParticipantes);
@@ -330,5 +358,7 @@
         private Button btnParticipantes;
         private Button btnEliminar;
         private ComboBox cbxHorario;
+        private Button button1;
+        private Button btnHome;
     }
 }

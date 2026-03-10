@@ -39,6 +39,7 @@
             btnProgramas = new Button();
             btnDocentes = new Button();
             btnInscripciones = new Button();
+            btnHome = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCurso).BeginInit();
             SuspendLayout();
             // 
@@ -160,6 +161,18 @@
             btnInscripciones.TabIndex = 10;
             btnInscripciones.Text = "Inscripciones";
             btnInscripciones.UseVisualStyleBackColor = false;
+            btnInscripciones.Click += btnInscripciones_Click;
+            // 
+            // btnHome
+            // 
+            btnHome.BackColor = SystemColors.GradientActiveCaption;
+            btnHome.Image = Properties.Resources.salir_alt;
+            btnHome.Location = new Point(1241, 14);
+            btnHome.Name = "btnHome";
+            btnHome.Size = new Size(61, 58);
+            btnHome.TabIndex = 16;
+            btnHome.UseVisualStyleBackColor = false;
+            btnHome.Click += btnHome_Click;
             // 
             // WF_Curso
             // 
@@ -168,6 +181,7 @@
             BackColor = SystemColors.ActiveCaption;
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(1335, 708);
+            Controls.Add(btnHome);
             Controls.Add(btnInscripciones);
             Controls.Add(btnDocentes);
             Controls.Add(btnProgramas);
@@ -200,5 +214,6 @@
         private Button btnProgramas;
         private Button btnDocentes;
         private Button btnInscripciones;
+        private Button btnHome;
     }
 }

@@ -48,6 +48,7 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
+            btnHome = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -207,6 +208,7 @@
             btnInscripciones.TabIndex = 15;
             btnInscripciones.Text = "Inscripciones";
             btnInscripciones.UseVisualStyleBackColor = false;
+            btnInscripciones.Click += btnInscripciones_Click;
             // 
             // label1
             // 
@@ -253,12 +255,24 @@
             label5.TabIndex = 20;
             label5.Text = "Número de Telefono";
             // 
+            // btnHome
+            // 
+            btnHome.BackColor = SystemColors.GradientActiveCaption;
+            btnHome.Image = Properties.Resources.salir_alt;
+            btnHome.Location = new Point(1176, 22);
+            btnHome.Name = "btnHome";
+            btnHome.Size = new Size(61, 58);
+            btnHome.TabIndex = 21;
+            btnHome.UseVisualStyleBackColor = false;
+            btnHome.Click += btnHome_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(1267, 690);
+            Controls.Add(btnHome);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -309,5 +323,6 @@
         private Label label3;
         private Label label4;
         private Label label5;
+        private Button btnHome;
     }
 }

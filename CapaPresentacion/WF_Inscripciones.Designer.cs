@@ -33,11 +33,15 @@
             cbxCurso = new ComboBox();
             btnGuardar = new Button();
             btnEliminar = new Button();
+            button1 = new Button();
+            label1 = new Label();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvInscripciones).BeginInit();
             SuspendLayout();
             // 
             // dgvInscripciones
             // 
+            dgvInscripciones.BackgroundColor = SystemColors.ActiveCaption;
             dgvInscripciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvInscripciones.Location = new Point(2, 101);
             dgvInscripciones.Name = "dgvInscripciones";
@@ -83,12 +87,44 @@
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.GradientInactiveCaption;
+            button1.Image = Properties.Resources.salir_alt;
+            button1.Location = new Point(12, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(61, 59);
+            button1.TabIndex = 5;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(1046, 152);
+            label1.Name = "label1";
+            label1.Size = new Size(144, 20);
+            label1.TabIndex = 6;
+            label1.Text = "Matricula Estudiante";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(1046, 250);
+            label2.Name = "label2";
+            label2.Size = new Size(142, 20);
+            label2.TabIndex = 7;
+            label2.Text = "Programa a Inscribir";
+            // 
             // WF_Inscripciones
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(1365, 691);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(button1);
             Controls.Add(btnEliminar);
             Controls.Add(btnGuardar);
             Controls.Add(cbxCurso);
@@ -99,6 +135,7 @@
             Load += WF_Inscripciones_Load;
             ((System.ComponentModel.ISupportInitialize)dgvInscripciones).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -108,5 +145,8 @@
         private ComboBox cbxCurso;
         private Button btnGuardar;
         private Button btnEliminar;
+        private Button button1;
+        private Label label1;
+        private Label label2;
     }
 }

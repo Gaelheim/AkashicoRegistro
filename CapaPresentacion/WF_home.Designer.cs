@@ -32,11 +32,11 @@
             label1 = new Label();
             panel2 = new Panel();
             btnReportes = new Button();
-            button2 = new Button();
+            btnDocente = new Button();
             btnParticipantes = new Button();
             panel3 = new Panel();
-            button6 = new Button();
-            button3 = new Button();
+            btnPrograma = new Button();
+            btnCurso = new Button();
             btnInscripciones = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -66,14 +66,14 @@
             // panel2
             // 
             panel2.Controls.Add(btnReportes);
-            panel2.Controls.Add(button2);
+            panel2.Controls.Add(btnDocente);
             panel2.Controls.Add(btnParticipantes);
             panel2.Location = new Point(396, 82);
             panel2.Name = "panel2";
             panel2.Size = new Size(415, 482);
             panel2.TabIndex = 1;
             // 
-            // button5
+            // btnReportes
             // 
             btnReportes.BackColor = SystemColors.GradientActiveCaption;
             btnReportes.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
@@ -85,71 +85,75 @@
             btnReportes.Text = "Reportes";
             btnReportes.TextAlign = ContentAlignment.BottomCenter;
             btnReportes.UseVisualStyleBackColor = false;
+            btnReportes.Click += btnReportes_Click;
             // 
-            // button2
+            // btnDocente
             // 
-            button2.BackColor = SystemColors.GradientActiveCaption;
-            button2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            button2.Image = Properties.Resources.usuarios;
-            button2.Location = new Point(71, 206);
-            button2.Name = "button2";
-            button2.Size = new Size(268, 106);
-            button2.TabIndex = 1;
-            button2.Text = "Docentes";
-            button2.TextAlign = ContentAlignment.BottomCenter;
-            button2.UseVisualStyleBackColor = false;
+            btnDocente.BackColor = SystemColors.GradientActiveCaption;
+            btnDocente.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            btnDocente.Image = Properties.Resources.usuarios;
+            btnDocente.Location = new Point(71, 206);
+            btnDocente.Name = "btnDocente";
+            btnDocente.Size = new Size(268, 106);
+            btnDocente.TabIndex = 1;
+            btnDocente.Text = "Docentes";
+            btnDocente.TextAlign = ContentAlignment.BottomCenter;
+            btnDocente.UseVisualStyleBackColor = false;
+            btnDocente.Click += btnDocente_Click;
             // 
-            // button1
+            // btnParticipantes
             // 
             btnParticipantes.BackColor = SystemColors.GradientActiveCaption;
             btnParticipantes.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             btnParticipantes.Image = Properties.Resources.agregar_usuario;
             btnParticipantes.Location = new Point(71, 78);
-            btnParticipantes.Name = "button1";
+            btnParticipantes.Name = "btnParticipantes";
             btnParticipantes.Size = new Size(268, 106);
             btnParticipantes.TabIndex = 0;
             btnParticipantes.Text = "Participantes";
             btnParticipantes.TextAlign = ContentAlignment.BottomCenter;
             btnParticipantes.UseVisualStyleBackColor = false;
+            btnParticipantes.Click += btnParticipantes_Click;
             // 
             // panel3
             // 
-            panel3.Controls.Add(button6);
-            panel3.Controls.Add(button3);
+            panel3.Controls.Add(btnPrograma);
+            panel3.Controls.Add(btnCurso);
             panel3.Controls.Add(btnInscripciones);
             panel3.Location = new Point(0, 82);
             panel3.Name = "panel3";
             panel3.Size = new Size(390, 482);
             panel3.TabIndex = 2;
             // 
-            // button6
+            // btnPrograma
             // 
-            button6.BackColor = SystemColors.GradientActiveCaption;
-            button6.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold);
-            button6.Image = Properties.Resources.lapiz;
-            button6.Location = new Point(58, 333);
-            button6.Name = "button6";
-            button6.Size = new Size(268, 106);
-            button6.TabIndex = 3;
-            button6.Text = "Programas";
-            button6.TextAlign = ContentAlignment.BottomCenter;
-            button6.UseVisualStyleBackColor = false;
+            btnPrograma.BackColor = SystemColors.GradientActiveCaption;
+            btnPrograma.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold);
+            btnPrograma.Image = Properties.Resources.lapiz;
+            btnPrograma.Location = new Point(58, 333);
+            btnPrograma.Name = "btnPrograma";
+            btnPrograma.Size = new Size(268, 106);
+            btnPrograma.TabIndex = 3;
+            btnPrograma.Text = "Programas";
+            btnPrograma.TextAlign = ContentAlignment.BottomCenter;
+            btnPrograma.UseVisualStyleBackColor = false;
+            btnPrograma.Click += btnPrograma_Click;
             // 
-            // button3
+            // btnCurso
             // 
-            button3.BackColor = SystemColors.GradientActiveCaption;
-            button3.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold);
-            button3.Image = Properties.Resources.gorro_de_graduacion;
-            button3.Location = new Point(58, 206);
-            button3.Name = "button3";
-            button3.Size = new Size(268, 106);
-            button3.TabIndex = 2;
-            button3.Text = "Cursos";
-            button3.TextAlign = ContentAlignment.BottomCenter;
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            btnCurso.BackColor = SystemColors.GradientActiveCaption;
+            btnCurso.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold);
+            btnCurso.Image = Properties.Resources.gorro_de_graduacion;
+            btnCurso.Location = new Point(58, 206);
+            btnCurso.Name = "btnCurso";
+            btnCurso.Size = new Size(268, 106);
+            btnCurso.TabIndex = 2;
+            btnCurso.Text = "Cursos";
+            btnCurso.TextAlign = ContentAlignment.BottomCenter;
+            btnCurso.UseVisualStyleBackColor = false;
+            btnCurso.Click += btnCurso_Click;
             // 
-            // Inscripciones
+            // btnInscripciones
             // 
             btnInscripciones.BackColor = SystemColors.GradientActiveCaption;
             btnInscripciones.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold);
@@ -187,11 +191,11 @@
         private Label label1;
         private Panel panel2;
         private Button btnReportes;
-        private Button button2;
+        private Button btnDocente;
         private Button btnParticipantes;
         private Panel panel3;
-        private Button button6;
-        private Button button3;
+        private Button btnPrograma;
+        private Button btnCurso;
         private Button btnInscripciones;
     }
 }

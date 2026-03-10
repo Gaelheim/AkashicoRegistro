@@ -31,7 +31,28 @@ namespace CapaPresentacion
             this.Hide();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnCurso_Click(object sender, EventArgs e)
+        {
+            WF_Curso curso = new WF_Curso();
+            curso.Show();
+            this.Hide();
+        }
+
+        private void btnPrograma_Click(object sender, EventArgs e)
+        {
+            WF_Programa programa = new WF_Programa();
+            programa.Show();
+            this.Hide();
+        }
+
+        private void btnDocente_Click(object sender, EventArgs e)
+        {
+            WF_Docente docente = new WF_Docente();
+            docente.Show();
+            this.Hide();
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
         {
 
         }

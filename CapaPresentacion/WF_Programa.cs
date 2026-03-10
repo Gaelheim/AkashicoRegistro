@@ -164,21 +164,21 @@ namespace CapaPresentacion
         {
             WF_Curso curso = new WF_Curso();
             curso.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnWfDocente_Click(object sender, EventArgs e)
         {
             WF_Docente docente = new WF_Docente();
             docente.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnParticipantes_Click(object sender, EventArgs e)
         {
             Form1 participantes = new Form1();
             participantes.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -211,6 +211,20 @@ namespace CapaPresentacion
             {
                 e.Handled = true; // Evitar que se ingrese el carácter
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e) //boton para ir al centro de inscripciones
+        {
+            WF_Inscripciones_Centro inscripciones_Centro = new WF_Inscripciones_Centro();
+            inscripciones_Centro.Show();
+            this.Hide();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            WF_home home = new WF_home();
+            home.Show();
+            this.Close();
         }
     }
 }
