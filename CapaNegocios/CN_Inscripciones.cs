@@ -42,5 +42,15 @@ namespace CapaNegocios
         {
             objeto.Eliminar(inscripcionID);
         }
+
+        public void ModificarARetirado(int id)
+        {
+            objeto.ModificarARetirado(id);
+        }
+
+        public void ModificarAInscrito(int id)
+        {
+            objeto.ModificarAInscrito(id);
+        }
     }
 }

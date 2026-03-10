@@ -26,12 +26,16 @@ namespace CapaPresentacion
 
         private void btnAdministrar_Click(object sender, EventArgs e)
         {
-
+            WF_Inscripciones_Administrar administrar = new WF_Inscripciones_Administrar();
+            administrar.Show();
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            WF_home home = new WF_home();
+            home.Show();
+            this.Close();
         }
     }
 }

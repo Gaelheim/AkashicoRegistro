@@ -296,10 +296,7 @@ namespace CapaPresentacion
 
         }
 
-        private void txtCedula_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+    
 
         private void btnInscripciones_Click(object sender, EventArgs e)
         {

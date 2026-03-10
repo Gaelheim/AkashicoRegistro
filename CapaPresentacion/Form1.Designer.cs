@@ -87,7 +87,6 @@
             txtCedula.Name = "txtCedula";
             txtCedula.Size = new Size(258, 27);
             txtCedula.TabIndex = 3;
-            txtCedula.TextChanged += txtCedula_TextChanged;
             txtCedula.KeyPress += txtCedula_KeyPress;
             // 
             // txtCorreo

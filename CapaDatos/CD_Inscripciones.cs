@@ -73,6 +73,34 @@ namespace CapaDatos
             comando.Parameters.Clear();
 
         }
+
+        public void ModificarAInscrito(int id)
+        {
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "InscribirParticipante";
+            comando.CommandType = CommandType.StoredProcedure;
+
+            comando.Parameters.AddWithValue("@InscripcionID", id);
+
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+
+        }
+
+        public void ModificarARetirado(int id)
+        {
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "RetirarParticipante";
+            comando.CommandType = CommandType.StoredProcedure;
+
+            comando.Parameters.AddWithValue("@InscripcionID", id);
+
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+
+        }
     }
 
 }
