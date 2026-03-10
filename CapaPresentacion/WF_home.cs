@@ -54,7 +54,9 @@ namespace CapaPresentacion
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
-
+            WF_Reportes reportes = new WF_Reportes();
+            reportes.Show();
+            this.Hide();
         }
     }
 }

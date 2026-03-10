@@ -9,6 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView" Version="3.1.2" />
+    <PackageReference Include="ScottPlot.WinForms" Version="5.1.57" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CapaNegocios\CapaNegocios.csproj" />
   </ItemGroup>
 
