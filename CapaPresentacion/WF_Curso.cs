@@ -135,5 +135,32 @@ namespace CapaPresentacion
             curso.Show();
             this.Hide();
         }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+                return;
+            }
+
+            // Evita espacio al inicio o espacios dobles
+            if (e.KeyChar == ' ')
+            {
+                string texto = ((TextBox)sender).Text;
+                if (texto.Length == 0 || texto.EndsWith(" "))
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void txtCapacidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Evitar que se ingrese el carácter
+            }
+        }
     }
 }

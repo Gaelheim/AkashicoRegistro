@@ -49,7 +49,7 @@
             // 
             cbxParticipante.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxParticipante.FormattingEnabled = true;
-            cbxParticipante.Location = new Point(1062, 101);
+            cbxParticipante.Location = new Point(1046, 175);
             cbxParticipante.Name = "cbxParticipante";
             cbxParticipante.Size = new Size(243, 28);
             cbxParticipante.TabIndex = 1;
@@ -58,14 +58,14 @@
             // 
             cbxCurso.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxCurso.FormattingEnabled = true;
-            cbxCurso.Location = new Point(1062, 199);
+            cbxCurso.Location = new Point(1046, 273);
             cbxCurso.Name = "cbxCurso";
             cbxCurso.Size = new Size(243, 28);
             cbxCurso.TabIndex = 2;
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(1062, 302);
+            btnGuardar.Location = new Point(1046, 376);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(94, 29);
             btnGuardar.TabIndex = 3;
@@ -75,7 +75,7 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(1181, 302);
+            btnEliminar.Location = new Point(1165, 376);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(94, 29);
             btnEliminar.TabIndex = 4;
@@ -87,6 +87,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(1365, 691);
             Controls.Add(btnEliminar);
             Controls.Add(btnGuardar);

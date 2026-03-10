@@ -65,19 +65,23 @@
             // 
             txtNombre.Cursor = Cursors.IBeam;
             txtNombre.Location = new Point(997, 175);
+            txtNombre.MaxLength = 100;
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(297, 27);
             txtNombre.TabIndex = 2;
             txtNombre.Text = "Nombre de Curso";
+            txtNombre.KeyPress += txtNombre_KeyPress;
             // 
             // txtCapacidad
             // 
             txtCapacidad.Cursor = Cursors.IBeam;
             txtCapacidad.Location = new Point(997, 244);
+            txtCapacidad.MaxLength = 2;
             txtCapacidad.Name = "txtCapacidad";
             txtCapacidad.Size = new Size(297, 27);
             txtCapacidad.TabIndex = 3;
             txtCapacidad.Text = "Capacidad Maxima";
+            txtCapacidad.KeyPress += txtCapacidad_KeyPress;
             // 
             // btnInsertar
             // 
@@ -95,9 +99,9 @@
             // 
             btnEliminar.BackColor = Color.Brown;
             btnEliminar.Cursor = Cursors.Hand;
-            btnEliminar.Location = new Point(997, 462);
+            btnEliminar.Location = new Point(997, 539);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(305, 48);
+            btnEliminar.Size = new Size(305, 55);
             btnEliminar.TabIndex = 5;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
@@ -106,9 +110,9 @@
             // btnEditar
             // 
             btnEditar.BackColor = Color.Gold;
-            btnEditar.Location = new Point(30, 642);
+            btnEditar.Location = new Point(997, 458);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(133, 40);
+            btnEditar.Size = new Size(305, 59);
             btnEditar.TabIndex = 6;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
@@ -116,42 +120,46 @@
             // 
             // btnParticipantes
             // 
-            btnParticipantes.Location = new Point(12, 21);
+            btnParticipantes.BackColor = SystemColors.GradientActiveCaption;
+            btnParticipantes.Location = new Point(12, 30);
             btnParticipantes.Name = "btnParticipantes";
-            btnParticipantes.Size = new Size(157, 36);
+            btnParticipantes.Size = new Size(157, 27);
             btnParticipantes.TabIndex = 7;
             btnParticipantes.Text = "Participantes";
-            btnParticipantes.UseVisualStyleBackColor = true;
+            btnParticipantes.UseVisualStyleBackColor = false;
             btnParticipantes.Click += btnParticipantes_Click;
             // 
             // btnProgramas
             // 
-            btnProgramas.Location = new Point(12, 91);
+            btnProgramas.BackColor = SystemColors.GradientActiveCaption;
+            btnProgramas.Location = new Point(359, 30);
             btnProgramas.Name = "btnProgramas";
-            btnProgramas.Size = new Size(157, 36);
+            btnProgramas.Size = new Size(157, 27);
             btnProgramas.TabIndex = 8;
             btnProgramas.Text = "Programas";
-            btnProgramas.UseVisualStyleBackColor = true;
+            btnProgramas.UseVisualStyleBackColor = false;
             btnProgramas.Click += btnProgramas_Click;
             // 
             // btnDocentes
             // 
-            btnDocentes.Location = new Point(217, 21);
+            btnDocentes.BackColor = SystemColors.GradientActiveCaption;
+            btnDocentes.Location = new Point(186, 30);
             btnDocentes.Name = "btnDocentes";
-            btnDocentes.Size = new Size(157, 36);
+            btnDocentes.Size = new Size(157, 27);
             btnDocentes.TabIndex = 9;
             btnDocentes.Text = "Docentes";
-            btnDocentes.UseVisualStyleBackColor = true;
+            btnDocentes.UseVisualStyleBackColor = false;
             btnDocentes.Click += btnDocentes_Click;
             // 
             // btnInscripciones
             // 
-            btnInscripciones.Location = new Point(217, 91);
+            btnInscripciones.BackColor = SystemColors.GradientActiveCaption;
+            btnInscripciones.Location = new Point(533, 30);
             btnInscripciones.Name = "btnInscripciones";
-            btnInscripciones.Size = new Size(157, 36);
+            btnInscripciones.Size = new Size(157, 27);
             btnInscripciones.TabIndex = 10;
             btnInscripciones.Text = "Inscripciones";
-            btnInscripciones.UseVisualStyleBackColor = true;
+            btnInscripciones.UseVisualStyleBackColor = false;
             // 
             // WF_Curso
             // 
