@@ -101,6 +101,28 @@ namespace CapaDatos
             comando.Parameters.Clear();
 
         }
+
+        public bool InscripcionExiste(string matricula, string codigoPrograma)
+        {
+            bool existe = false;
+            try
+            {
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "SELECT COUNT(*) FROM Inscripcion WHERE Matricula = @Matricula AND CodigoPrograma = @CodigoPrograma";
+                comando.CommandType = CommandType.Text;
+                comando.Parameters.AddWithValue("@Matricula", matricula);
+                comando.Parameters.AddWithValue("@CodigoPrograma", codigoPrograma);
+
+                int cantidad = Convert.ToInt32(comando.ExecuteScalar());
+                existe = cantidad > 0;
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+            return existe;
+        }
     }
 
 }

@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CapaNegocios
 {
@@ -26,16 +27,16 @@ namespace CapaNegocios
             return tabla1;
         }
 
-        public DataTable MostrarCurso()
+        public DataTable MostrarPrograma()
         {
             DataTable tabla2 = new DataTable();
             tabla2 = objeto.ObtenerPrograma();
             return tabla2;
         }
 
-        public void InsertarInscripcion(string matricula, string cursoID)
+        public void InsertarInscripcion(string matricula, string codigoPrograma)
         {
-            objeto.Insertar(matricula, cursoID);
+            objeto.Insertar(matricula, codigoPrograma);
         }
 
         public void EliminarInscripcion(int inscripcionID)
@@ -51,6 +52,11 @@ namespace CapaNegocios
         public void ModificarAInscrito(int id)
         {
             objeto.ModificarAInscrito(id);
+        }
+
+        public bool InscripcionExiste(string matricula, string codigoPorgrama)
+        {
+            return objeto.InscripcionExiste(matricula, codigoPorgrama);
         }
     }
 }

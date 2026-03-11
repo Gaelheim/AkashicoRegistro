@@ -45,7 +45,7 @@ namespace CapaPresentacion
 
         private void CargarCursos()
         {
-            cbxCurso.DataSource = objeto.MostrarCurso();
+            cbxCurso.DataSource = objeto.MostrarPrograma();
             cbxCurso.DisplayMember = "Nombre";    // lo que VE el usuario
             cbxCurso.ValueMember = "CodigoPrograma";   // lo que usa el código
             cbxCurso.SelectedIndex = -1;          // inicia vacío
@@ -55,16 +55,36 @@ namespace CapaPresentacion
         {
             try
             {
+                if (cbxParticipante.SelectedIndex == -1 || cbxCurso.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Debe seleccionar un participante y un programa.",
+                                    "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 string matricula = cbxParticipante.SelectedValue.ToString();
-                string cursoID = cbxCurso.SelectedValue.ToString();
-                objeto.InsertarInscripcion(matricula, cursoID);
-                MessageBox.Show("Programa guardado correctamente!");
+                string codigoPrograma = cbxCurso.SelectedValue.ToString();
+
+                if (objeto.InscripcionExiste(matricula, codigoPrograma))
+                {
+                    MessageBox.Show("Este participante ya está inscrito en ese programa.",
+                                    "Inscripción duplicada",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                    return;
+                }
+
+                objeto.InsertarInscripcion(matricula, codigoPrograma);
+                MessageBox.Show("Inscripción guardada correctamente!",
+                                "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MostrarInscripciones();
                 LimpiarForm();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudo guardar por: " + ex.Message);
+                // Todos los errores incluido el de verificación se muestran aquí
+                MessageBox.Show("No se pudo guardar por: " + ex.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

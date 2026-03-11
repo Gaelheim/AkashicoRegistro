@@ -73,7 +73,7 @@
             tabReporte.Location = new Point(12, 87);
             tabReporte.Name = "tabReporte";
             tabReporte.SelectedIndex = 0;
-            tabReporte.Size = new Size(1296, 603);
+            tabReporte.Size = new Size(1751, 930);
             tabReporte.TabIndex = 2;
             // 
             // tabOcupacion
@@ -83,16 +83,16 @@
             tabOcupacion.Location = new Point(4, 29);
             tabOcupacion.Name = "tabOcupacion";
             tabOcupacion.Padding = new Padding(3);
-            tabOcupacion.Size = new Size(1288, 570);
+            tabOcupacion.Size = new Size(1743, 897);
             tabOcupacion.TabIndex = 0;
             tabOcupacion.Text = "Ocupación";
             tabOcupacion.UseVisualStyleBackColor = true;
             // 
             // panelOcupacion
             // 
-            panelOcupacion.Location = new Point(651, 0);
+            panelOcupacion.Location = new Point(669, 3);
             panelOcupacion.Name = "panelOcupacion";
-            panelOcupacion.Size = new Size(634, 567);
+            panelOcupacion.Size = new Size(1068, 888);
             panelOcupacion.TabIndex = 1;
             // 
             // dgvOcupacion
@@ -101,7 +101,7 @@
             dgvOcupacion.Location = new Point(0, 0);
             dgvOcupacion.Name = "dgvOcupacion";
             dgvOcupacion.RowHeadersWidth = 51;
-            dgvOcupacion.Size = new Size(654, 570);
+            dgvOcupacion.Size = new Size(663, 894);
             dgvOcupacion.TabIndex = 0;
             // 
             // tabDesercion
@@ -111,7 +111,7 @@
             tabDesercion.Location = new Point(4, 29);
             tabDesercion.Name = "tabDesercion";
             tabDesercion.Padding = new Padding(3);
-            tabDesercion.Size = new Size(1288, 570);
+            tabDesercion.Size = new Size(1743, 897);
             tabDesercion.TabIndex = 1;
             tabDesercion.Text = "Deserción";
             tabDesercion.UseVisualStyleBackColor = true;
@@ -122,14 +122,14 @@
             dgvDesercion.Location = new Point(0, 0);
             dgvDesercion.Name = "dgvDesercion";
             dgvDesercion.RowHeadersWidth = 51;
-            dgvDesercion.Size = new Size(612, 567);
+            dgvDesercion.Size = new Size(612, 891);
             dgvDesercion.TabIndex = 1;
             // 
             // panelDesercion
             // 
             panelDesercion.Location = new Point(618, 0);
             panelDesercion.Name = "panelDesercion";
-            panelDesercion.Size = new Size(670, 570);
+            panelDesercion.Size = new Size(1125, 897);
             panelDesercion.TabIndex = 0;
             // 
             // btnHome
@@ -147,7 +147,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1320, 702);
+            ClientSize = new Size(1808, 1029);
             Controls.Add(btnHome);
             Controls.Add(tabReporte);
             Controls.Add(btnDesercion);

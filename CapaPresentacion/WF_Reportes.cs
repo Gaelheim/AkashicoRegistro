@@ -84,7 +84,9 @@ namespace CapaPresentacion
             foreach (DataRow row in dt.Rows)
             {
                 etiquetas.Add(row["NombreCurso"].ToString());
-                valores.Add(Convert.ToDouble(row["PorcentajeOcupacion"]));
+
+                double valor = row["TotalInscritos"] == DBNull.Value ? 0 : Convert.ToDouble(row["TotalInscritos"]);
+                valores.Add(valor);
             }
 
             // Sintaxis ScottPlot 5
@@ -117,7 +119,9 @@ namespace CapaPresentacion
             foreach (DataRow row in dt.Rows)
             {
                 etiquetas.Add(row["NombreCurso"].ToString());
-                valores.Add(Convert.ToDouble(row["TasaDesercion"]));
+
+                double valor = row["TasaDesercion"] == DBNull.Value ? 0 : Convert.ToDouble(row["TasaDesercion"]);
+                valores.Add(valor);
             }
 
             chartDesercion.Plot.Clear();
