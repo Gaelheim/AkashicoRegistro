@@ -40,6 +40,9 @@
             btnDocentes = new Button();
             btnInscripciones = new Button();
             btnHome = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvCurso).BeginInit();
             SuspendLayout();
             // 
@@ -70,7 +73,6 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(297, 27);
             txtNombre.TabIndex = 2;
-            txtNombre.Text = "Nombre de Curso";
             txtNombre.KeyPress += txtNombre_KeyPress;
             // 
             // txtCapacidad
@@ -81,7 +83,6 @@
             txtCapacidad.Name = "txtCapacidad";
             txtCapacidad.Size = new Size(297, 27);
             txtCapacidad.TabIndex = 3;
-            txtCapacidad.Text = "Capacidad Maxima";
             txtCapacidad.KeyPress += txtCapacidad_KeyPress;
             // 
             // btnInsertar
@@ -174,6 +175,34 @@
             btnHome.UseVisualStyleBackColor = false;
             btnHome.Click += btnHome_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(997, 152);
+            label1.Name = "label1";
+            label1.RightToLeft = RightToLeft.No;
+            label1.Size = new Size(126, 20);
+            label1.TabIndex = 17;
+            label1.Text = "Nombre de Curso";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(997, 221);
+            label2.Name = "label2";
+            label2.Size = new Size(137, 20);
+            label2.TabIndex = 18;
+            label2.Text = "Capacidad Maxima";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(997, 294);
+            label3.Name = "label3";
+            label3.Size = new Size(87, 20);
+            label3.TabIndex = 19;
+            label3.Text = "Fecha Inicio";
+            // 
             // WF_Curso
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -181,6 +210,9 @@
             BackColor = SystemColors.ActiveCaption;
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(1335, 708);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(btnHome);
             Controls.Add(btnInscripciones);
             Controls.Add(btnDocentes);
@@ -215,5 +247,8 @@
         private Button btnDocentes;
         private Button btnInscripciones;
         private Button btnHome;
+        private Label label1;
+        private Label label2;
+        private Label label3;
     }
 }

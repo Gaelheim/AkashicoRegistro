@@ -207,9 +207,20 @@ namespace CapaPresentacion
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && e.KeyChar != (char)Keys.Back)
             {
-                e.Handled = true; // Evitar que se ingrese el carácter
+                e.Handled = true;
+                return;
+            }
+
+            // Evita espacio al inicio o espacios dobles
+            if (e.KeyChar == ' ')
+            {
+                string texto = ((TextBox)sender).Text;
+                if (texto.Length == 0 || texto.EndsWith(" "))
+                {
+                    e.Handled = true;
+                }
             }
         }
 
