@@ -132,6 +132,7 @@
             Controls.Add(dgvInscripciones);
             Name = "WF_Inscripciones";
             Text = "WF_Inscripciones";
+            FormClosing += WF_Inscripciones_FormClosing;
             Load += WF_Inscripciones_Load;
             ((System.ComponentModel.ISupportInitialize)dgvInscripciones).EndInit();
             ResumeLayout(false);

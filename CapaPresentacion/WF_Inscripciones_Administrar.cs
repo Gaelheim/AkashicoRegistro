@@ -53,7 +53,7 @@ namespace CapaPresentacion
                 // Verificar el estatus actual antes de modificar
                 if (estatusActual == "RETIRADO")
                 {
-                   
+
                     MessageBox.Show("Este participante está Retirado y no puede volver a ser Inscrito.",
                                     "Acción no permitida",
                                     MessageBoxButtons.OK,
@@ -110,7 +110,12 @@ namespace CapaPresentacion
         {
             WF_home home = new WF_home();
             home.ShowDialog();
-            this.Close();
+            this.Hide();
+        }
+
+        private void WF_Inscripciones_Administrar_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

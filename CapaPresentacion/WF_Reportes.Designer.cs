@@ -154,6 +154,7 @@
             Controls.Add(btnOcupacion);
             Name = "WF_Reportes";
             Text = "WF_Reportes";
+            FormClosing += WF_Reportes_FormClosing;
             Load += WF_Reportes_Load;
             tabReporte.ResumeLayout(false);
             tabOcupacion.ResumeLayout(false);

@@ -67,7 +67,7 @@ namespace CapaPresentacion
         {
             WF_home home = new WF_home();
             home.Show();
-            this.Close();
+            this.Hide();
         }
 
         //TODO: Método para inicializar las gráficas de ocupación y deserción, creando instancias de FormsPlot y agregándolas a los paneles correspondientes en el formulario.
@@ -99,7 +99,7 @@ namespace CapaPresentacion
             // Limpiar la gráfica antes de agregar los nuevos datos
             chartOcupacion.Plot.Clear();
 
-           
+
             double[] posiciones = Enumerable.Range(0, valores.Count)
                                             .Select(i => (double)i).ToArray(); // Generar un arreglo de posiciones para las barras en el eje X
 
@@ -111,7 +111,7 @@ namespace CapaPresentacion
                 tickGen.AddMajor(i, etiquetas[i]); // Agregar un tick mayor para cada posición con la etiqueta correspondiente
 
             chartOcupacion.Plot.Axes.Bottom.TickGenerator = tickGen; // Asignar el generador de ticks al eje X para mostrar las etiquetas de los cursos
-            chartOcupacion.Plot.Title("Ocupación por Curso"); 
+            chartOcupacion.Plot.Title("Ocupación por Curso");
             chartOcupacion.Plot.YLabel("% Ocupación");
             chartOcupacion.Plot.XLabel("Cursos");
             chartOcupacion.Refresh();
@@ -161,6 +161,11 @@ namespace CapaPresentacion
         private void WF_Reportes_Load(object sender, EventArgs e)
         {
             InicializarGraficas();
+        }
+
+        private void WF_Reportes_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

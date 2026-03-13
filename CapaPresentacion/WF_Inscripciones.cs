@@ -123,7 +123,12 @@ namespace CapaPresentacion
         {
             WF_Inscripciones_Centro inscripciones_Centro = new WF_Inscripciones_Centro();
             inscripciones_Centro.Show();
-            this.Close();
+            this.Hide();
+        }
+
+        private void WF_Inscripciones_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

@@ -129,21 +129,21 @@ namespace CapaPresentacion
         {
             Form1 participante = new Form1();
             participante.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnProgramas_Click(object sender, EventArgs e)
         {
             WF_Programa programa = new WF_Programa();
             programa.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnDocentes_Click(object sender, EventArgs e)
         {
-           WF_Docente docente = new WF_Docente();
+            WF_Docente docente = new WF_Docente();
             docente.Show();
-            this.Close();
+            this.Hide();
         }
 
         //TODO: Eventos KeyPress para validar la entrada de datos en los campos de texto,
@@ -182,7 +182,7 @@ namespace CapaPresentacion
         {
             WF_Inscripciones_Centro inscripciones_Centro = new WF_Inscripciones_Centro();
             inscripciones_Centro.Show();
-            this.Close();
+            this.Hide();
         }
 
         //TODO: Evento Click del botón "Home" para volver al formulario principal de la aplicación, cerrando el formulario actual.
@@ -190,7 +190,12 @@ namespace CapaPresentacion
         {
             WF_home home = new WF_home();
             home.Show();
-            this.Close();
+            this.Hide();
+        }
+
+        private void WF_Curso_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

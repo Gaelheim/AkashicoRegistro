@@ -178,6 +178,7 @@
             Controls.Add(panel1);
             Name = "WF_home";
             Text = "WF_home";
+            FormClosing += WF_home_FormClosing;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

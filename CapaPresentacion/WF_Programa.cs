@@ -92,9 +92,9 @@ namespace CapaPresentacion
         private void btnPrograma_Click(object sender, EventArgs e)
         {
             MostrarPrograma();
-                btnEditar.Enabled = true; // Habilitar el botón Editar al mostrar programas, ya que se pueden editar desde este formulario
-                btnEliminar.Enabled = true; // Habilitar el botón Eliminar al mostrar programas, ya que se pueden eliminar desde este formulario
-                btnGuardar.Enabled = true; // Habilitar el botón Guardar al mostrar programas, ya que se pueden guardar cambios desde este formulario
+            btnEditar.Enabled = true; // Habilitar el botón Editar al mostrar programas, ya que se pueden editar desde este formulario
+            btnEliminar.Enabled = true; // Habilitar el botón Eliminar al mostrar programas, ya que se pueden eliminar desde este formulario
+            btnGuardar.Enabled = true; // Habilitar el botón Guardar al mostrar programas, ya que se pueden guardar cambios desde este formulario
         }
 
         //TODO: Evento Click del botón "Guardar" para agregar un nuevo programa o editar uno existente, dependiendo del estado de la variable Editar.
@@ -188,7 +188,7 @@ namespace CapaPresentacion
         {
             WF_Curso curso = new WF_Curso();
             curso.Show();
-            this.Close();
+            this.Hide();
         }
 
         //TODO: Evento Click del botón "Docente" para abrir el formulario WF_Docente, permitiendo al usuario gestionar los docentes desde esa ventana.
@@ -196,7 +196,7 @@ namespace CapaPresentacion
         {
             WF_Docente docente = new WF_Docente();
             docente.Show();
-            this.Close();
+            this.Hide();
         }
 
         //TODO: Evento Click del botón "Participantes" para abrir el formulario Form1, permitiendo al usuario gestionar los participantes desde esa ventana.
@@ -204,7 +204,7 @@ namespace CapaPresentacion
         {
             Form1 participantes = new Form1();
             participantes.Show();
-            this.Close();
+            this.Hide();
         }
 
         //TODO: Evento Click del botón "Eliminar" para eliminar el programa seleccionado en el DataGridView, verificando que haya datos para eliminar. Si se elimina correctamente,
@@ -269,7 +269,12 @@ namespace CapaPresentacion
         {
             WF_home home = new WF_home();
             home.Show();
-            this.Close();
+            this.Hide();
+        }
+
+        private void WF_Programa_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

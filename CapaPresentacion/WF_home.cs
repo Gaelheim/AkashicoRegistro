@@ -61,5 +61,10 @@ namespace CapaPresentacion
             reportes.Show();
             this.Hide();
         }
+
+        private void WF_home_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

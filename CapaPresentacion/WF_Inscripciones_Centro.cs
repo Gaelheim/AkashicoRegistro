@@ -23,7 +23,7 @@ namespace CapaPresentacion
         {
             WF_Inscripciones anadir = new WF_Inscripciones();
             anadir.Show();
-            this.Close();
+            this.Hide();
         }
 
         // Evento para abrir el formulario de administrar inscripciones
@@ -31,7 +31,7 @@ namespace CapaPresentacion
         {
             WF_Inscripciones_Administrar administrar = new WF_Inscripciones_Administrar();
             administrar.Show();
-            this.Close();
+            this.Hide();
         }
 
         // Evento para volver al formulario principal
@@ -39,7 +39,7 @@ namespace CapaPresentacion
         {
             WF_home home = new WF_home();
             home.Show();
-            this.Close();
+            this.Hide();
         }
     }
 }

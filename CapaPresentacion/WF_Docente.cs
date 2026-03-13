@@ -116,7 +116,7 @@ namespace CapaPresentacion
         {
             Form1 participante = new Form1();
             participante.Show();
-            this.Close();
+            this.Hide();
         }
 
         //evento Click del botón "Cursos" para abrir el formulario de gestión de cursos, cerrando el formulario actual.
@@ -124,7 +124,7 @@ namespace CapaPresentacion
         {
             WF_Curso curso = new WF_Curso();
             curso.Show();
-            this.Close();
+            this.Hide();
         }
 
         //evento Click del botón "Programas" para abrir el formulario de gestión de programas, cerrando el formulario actual.
@@ -132,7 +132,7 @@ namespace CapaPresentacion
         {
             WF_Programa programa = new WF_Programa();
             programa.Show();
-            this.Close();
+            this.Hide();
         }
 
         //evento Click del botón "Inscripciones" para abrir el formulario de gestión de inscripciones, cerrando el formulario actual.
@@ -140,7 +140,7 @@ namespace CapaPresentacion
         {
             WF_Inscripciones_Centro inscripciones = new WF_Inscripciones_Centro();
             inscripciones.Show();
-            this.Close();
+            this.Hide();
         }
 
         //eventos KeyPress para validar la entrada de texto en los campos de nombre y título, permitiendo solo letras, espacios y caracteres de control, y evitando espacios al inicio o dobles espacios.
@@ -257,7 +257,12 @@ namespace CapaPresentacion
         {
             WF_home home = new WF_home();
             home.Show();
-            this.Close();
+            this.Hide();
+        }
+
+        private void WF_Docente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

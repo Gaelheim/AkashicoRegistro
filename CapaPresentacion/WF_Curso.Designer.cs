@@ -227,6 +227,7 @@
             Controls.Add(dgvCurso);
             Name = "WF_Curso";
             Text = "WF_Curso";
+            FormClosing += WF_Curso_FormClosing;
             Load += WF_Curso_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCurso).EndInit();
             ResumeLayout(false);

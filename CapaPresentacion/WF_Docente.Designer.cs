@@ -230,6 +230,7 @@
             Controls.Add(dgvDocente);
             Name = "WF_Docente";
             Text = "WF_Docente";
+            FormClosing += WF_Docente_FormClosing;
             Load += WF_Docente_Load;
             ((System.ComponentModel.ISupportInitialize)dgvDocente).EndInit();
             ResumeLayout(false);

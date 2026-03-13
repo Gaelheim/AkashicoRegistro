@@ -328,6 +328,7 @@
             Controls.Add(dgvPrograma);
             Name = "WF_Programa";
             Text = "WF_Programa";
+            FormClosing += WF_Programa_FormClosing;
             Load += WF_Programa_Load;
             ((System.ComponentModel.ISupportInitialize)dgvPrograma).EndInit();
             ResumeLayout(false);

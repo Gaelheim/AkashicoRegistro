@@ -90,6 +90,7 @@
             Controls.Add(dgvInscripciones);
             Name = "WF_Inscripciones_Administrar";
             Text = "WF_Inscripciones_Administrar";
+            FormClosing += WF_Inscripciones_Administrar_FormClosing;
             Load += WF_Inscripciones_Administrar_Load;
             ((System.ComponentModel.ISupportInitialize)dgvInscripciones).EndInit();
             ResumeLayout(false);

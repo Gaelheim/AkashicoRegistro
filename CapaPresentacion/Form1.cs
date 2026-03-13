@@ -155,21 +155,21 @@ namespace CapaPresentacion
         {
             WF_Curso curso = new WF_Curso();
             curso.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnPrograma_Click(object sender, EventArgs e)
         {
             WF_Programa programa = new WF_Programa();
             programa.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnDocentes_Click(object sender, EventArgs e)
         {
             WF_Docente docente = new WF_Docente();
             docente.Show();
-            this.Close();
+            this.Hide();
         }
 
         //eventos KeyPress para validar los campos de entrada, asegurando que solo se puedan ingresar caracteres válidos según el tipo de dato esperado
@@ -275,7 +275,7 @@ namespace CapaPresentacion
             }
         }
 
-        
+
         private void txtCorreo_TextChanged(object sender, EventArgs e)
         {
             TextBox txt = (TextBox)sender;
@@ -317,14 +317,19 @@ namespace CapaPresentacion
         {
             WF_Inscripciones_Centro inscripciones_Centro = new WF_Inscripciones_Centro();
             inscripciones_Centro.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
             WF_home home = new WF_home();
             home.Show();
-            this.Close();
+            this.Hide();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }
