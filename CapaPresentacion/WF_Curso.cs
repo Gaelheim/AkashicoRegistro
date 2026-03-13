@@ -141,8 +141,8 @@ namespace CapaPresentacion
 
         private void btnDocentes_Click(object sender, EventArgs e)
         {
-            WF_Curso curso = new WF_Curso();
-            curso.Show();
+           WF_Docente docente = new WF_Docente();
+            docente.Show();
             this.Close();
         }
 

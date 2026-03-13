@@ -69,6 +69,9 @@ namespace CapaPresentacion
         private void btnDocente_Click(object sender, EventArgs e)
         {
             MostrarDocentes();
+            btnEditar.Enabled = false; // Deshabilitar el botón Editar al mostrar docentes, ya que no se pueden editar desde este formulario
+            btnEliminar.Enabled = false; // Deshabilitar el botón Eliminar al mostrar docentes, ya que no se pueden eliminar desde este formulario
+            btnGuardar.Enabled = false; // Deshabilitar el botón Guardar al mostrar docentes, ya que no se pueden guardar cambios desde este formulario
         }
 
         //TODO: Evento para mostrar los cursos en el DataGridView, obteniendo los datos a través de la clase CN_Programa.
@@ -80,12 +83,18 @@ namespace CapaPresentacion
         private void btnCurso_Click(object sender, EventArgs e)
         {
             MostrarCursos();
+            btnGuardar.Enabled = false; // Deshabilitar el botón Guardar al mostrar cursos, ya que no se pueden guardar cambios desde este formulario
+            btnEliminar.Enabled = false; // Deshabilitar el botón Eliminar al mostrar cursos, ya que no se pueden eliminar desde este formulario
+            btnEditar.Enabled = false; // Deshabilitar el botón Editar al mostrar cursos, ya que no se pueden editar desde este formulario
         }
 
         //TODO: Evento Click del botón "Programa" para mostrar los programas en el DataGridView, obteniendo los datos a través de la clase CN_Programa.
         private void btnPrograma_Click(object sender, EventArgs e)
         {
             MostrarPrograma();
+                btnEditar.Enabled = true; // Habilitar el botón Editar al mostrar programas, ya que se pueden editar desde este formulario
+                btnEliminar.Enabled = true; // Habilitar el botón Eliminar al mostrar programas, ya que se pueden eliminar desde este formulario
+                btnGuardar.Enabled = true; // Habilitar el botón Guardar al mostrar programas, ya que se pueden guardar cambios desde este formulario
         }
 
         //TODO: Evento Click del botón "Guardar" para agregar un nuevo programa o editar uno existente, dependiendo del estado de la variable Editar.
