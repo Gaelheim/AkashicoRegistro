@@ -8,9 +8,11 @@ using System.Data.SqlClient;
 
 namespace CapaDatos
 {
+    //TODO: clase CD_Curso para manejar las operaciones relacionadas con la entidad Curso en la base de datos.
     public class CD_Curso
     {
-        private CD_Conexion conexion = new CD_Conexion(); //instancia de la capa Conexion de datos, para poder hacer uso de nuestra cadena que llama la base de datos.
+        //TODO: instancia de la clase CD_Conexion para establecer la conexion a la base de datos.
+        private CD_Conexion conexion = new CD_Conexion(); 
 
 
         //metodo para mostrar los datos de nuestra base de dato
@@ -26,6 +28,7 @@ namespace CapaDatos
             return tabla;
         }
 
+        //metodo para insertar datos a nuestra base de datos
         public void Insertar(string nombre, int capacidadMax, DateTime fechaInicio)
         {
             SqlCommand comando = new SqlCommand();
@@ -40,6 +43,7 @@ namespace CapaDatos
 
         }
 
+        //metodo para editar los datos de nuestra base de datos
         public void Editar(string cursoID, string nombre, int capacidadMax, DateTime fechaInicio)
         {
             SqlCommand comando = new SqlCommand();
@@ -54,6 +58,7 @@ namespace CapaDatos
             comando.Parameters.Clear();
         }
 
+        //metodo para eliminar los datos de nuestra base de datos
         public void Eliminar(string cursoID)
         {
             SqlCommand comando = new SqlCommand();

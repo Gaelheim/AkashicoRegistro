@@ -10,8 +10,10 @@ namespace CapaDatos
 {
     public class CD_Conexion
     {
+        //TODO: cadena de conexion a la base de datos.
         private SqlConnection Conexion = new SqlConnection("Server=.;DataBase= ProgramaInscripciones;Integrated Security=true");
 
+        //TODO: metodo para abrir la conexion a la base de datos, y retornar la conexion abierta.
         public SqlConnection AbrirConexion()
         {
             if (Conexion.State == ConnectionState.Closed)
@@ -20,6 +22,7 @@ namespace CapaDatos
            
         }
 
+        //TODO: metodo para cerrar la conexion a la base de datos, y retornar la conexion cerrada.
         public SqlConnection CerrarConexion()
         {
             if (Conexion.State == ConnectionState.Open)

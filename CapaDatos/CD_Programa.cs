@@ -10,10 +10,13 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CapaDatos
 {
+    //TODO: clase CD_Programa para manejar las operaciones relacionadas con la entidad Programa en la base de datos.
     public class CD_Programa
     {
+        //TODO: instancia de la clase CD_Conexion para establecer la conexion a la base de datos.
         private CD_Conexion conexion = new CD_Conexion();
 
+        //metodo para mostrar los datos de nuestra base de dato
         public DataTable MostrarPrograma()
         {
             SqlCommand comando = new SqlCommand();
@@ -24,7 +27,9 @@ namespace CapaDatos
             tabla.Load(leer);
             conexion.CerrarConexion();
             return tabla;
-        } 
+        }
+
+        //metodo para mostrar los datos de nuestra base de dato de los docentes y poder asignarlos aun cbx
         public DataTable ObtenerDocentes()
         {
             SqlCommand comando = new SqlCommand();
@@ -38,6 +43,7 @@ namespace CapaDatos
 
         }
 
+        //metodo para mostrar los datos de nuestra base de dato de los cursos y poder asignarlos aun cbx
         public DataTable ObtenerCursos()
         {
             SqlCommand comando = new SqlCommand();
@@ -52,6 +58,7 @@ namespace CapaDatos
   
         }
 
+        //metodo para mostrar los datos de nuestra base de dato de los docentes
         public DataTable MostrarDocente()
         {
             SqlCommand comando = new SqlCommand();
@@ -64,6 +71,7 @@ namespace CapaDatos
             return tabla3;
         }
 
+        //metodo para mostrar los datos de nuestra base de dato de los cursos
         public DataTable MostrarCurso()
         {
             SqlCommand comando = new SqlCommand();
@@ -76,6 +84,8 @@ namespace CapaDatos
             return tabla4;
         }
 
+
+        //metodo para insertar datos a nuestra base de datos
         public void Insertar(string nombre, string cursoID, int docenteID, int duracion_Semana, string dia, TimeSpan horario)
         {
             SqlCommand comando = new SqlCommand();
@@ -87,8 +97,8 @@ namespace CapaDatos
 
         }
 
-       
 
+        //metodo para editar los datos de nuestra base de datos
         public void Editar(string codigoPrograma, string nombre, string cursoID, int docenteID, int duracion_Semana, string dia, TimeSpan horario)
          {
              SqlCommand comando = new SqlCommand();
@@ -106,6 +116,7 @@ namespace CapaDatos
              comando.Parameters.Clear();
          }
 
+        //metodo para eliminar datos de nuestra base de datos
         public void Eliminar(string codigoPrograma)
         {
             SqlCommand comando = new SqlCommand();

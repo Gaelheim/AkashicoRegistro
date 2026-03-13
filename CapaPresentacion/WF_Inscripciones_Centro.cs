@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
+    //TODO: Formulario para gestionar las inscripciones, con opciones para añadir nuevas inscripciones, administrar las existentes y navegar a otras secciones de la aplicación.
     public partial class WF_Inscripciones_Centro : Form
     {
         public WF_Inscripciones_Centro()
@@ -17,6 +18,7 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
+        // Evento para abrir el formulario de añadir inscripciones
         private void btnAñadir_Click(object sender, EventArgs e)
         {
             WF_Inscripciones anadir = new WF_Inscripciones();
@@ -24,6 +26,7 @@ namespace CapaPresentacion
             this.Close();
         }
 
+        // Evento para abrir el formulario de administrar inscripciones
         private void btnAdministrar_Click(object sender, EventArgs e)
         {
             WF_Inscripciones_Administrar administrar = new WF_Inscripciones_Administrar();
@@ -31,6 +34,7 @@ namespace CapaPresentacion
             this.Close();
         }
 
+        // Evento para volver al formulario principal
         private void button1_Click(object sender, EventArgs e)
         {
             WF_home home = new WF_home();

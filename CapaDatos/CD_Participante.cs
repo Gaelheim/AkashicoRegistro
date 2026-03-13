@@ -9,10 +9,13 @@ using System.Data.SqlClient;
 
 namespace CapaDatos
 {
+    //TODO: clase CD_Participantes para manejar las operaciones relacionadas con la entidad Participante en la base de datos.
     public class CD_Participantes
     {
+        //TODO: instancia de la clase CD_Conexion para establecer la conexion a la base de datos.
         private CD_Conexion conexion = new CD_Conexion();
 
+        //metodo para mostrar los datos de nuestra base de dato
         public DataTable MostrarParticipantes()
         {
             SqlCommand comando = new SqlCommand();
@@ -25,6 +28,7 @@ namespace CapaDatos
             return tabla;
         }
 
+        //metodo para insertar datos a nuestra base de datos
         public void Insertar(string nombre, string apellido, string cedula, string correo, string telefono)
         {
             SqlCommand comando = new SqlCommand();
@@ -36,6 +40,7 @@ namespace CapaDatos
 
         }
 
+        //metodo para editar los datos de nuestra base de datos
         public void Editar(string matricula, string nombre, string apellido, string cedula, string correo, string telefono)
         {
             SqlCommand comando = new SqlCommand();
@@ -52,6 +57,7 @@ namespace CapaDatos
             comando.Parameters.Clear();
         }
 
+        //metodo para modificar el estatus de un participante a baja academica
         public void ModificarEstatusA(string matricula)
         {
             SqlCommand comando = new SqlCommand();
@@ -66,6 +72,7 @@ namespace CapaDatos
 
         }
 
+        //metodo para modificar el estatus de un participante a activo
         public void ActivarParticipante(string matricula)
         {
             SqlCommand comando = new SqlCommand();
@@ -79,6 +86,8 @@ namespace CapaDatos
             comando.Parameters.Clear();
 
         }
+
+        //metodo para modificar el estatus de un participante a baja medica
         public void ModificarEstatusM(string matricula)
         {
             SqlCommand comando = new SqlCommand();

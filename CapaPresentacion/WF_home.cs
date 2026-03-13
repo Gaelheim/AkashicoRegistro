@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
+    //TODO: Formulario principal de la aplicación con botones para navegar
+    //a las diferentes secciones (Inscripciones, Participantes, Cursos, Programas, Docentes, Reportes).
     public partial class WF_home : Form
     {
         public WF_home()
@@ -17,6 +19,7 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
+        //TODO: Implementar eventos de clic para cada botón que abra el formulario correspondiente y oculte el formulario principal.
         private void btnInscripciones_Click(object sender, EventArgs e) // Inscripciones
         {
             WF_Inscripciones_Centro inscripciones_Centro = new WF_Inscripciones_Centro();

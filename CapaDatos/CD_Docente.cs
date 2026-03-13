@@ -9,11 +9,13 @@ using System.Data.SqlClient;
 
 namespace CapaDatos
 {
-   public class CD_Docente
+    //TODO: clase CD_Docente para manejar las operaciones relacionadas con la entidad Docente en la base de datos.
+    public class CD_Docente
     {
-        private CD_Conexion conexion = new CD_Conexion(); 
-        //instancia de la capa Conexion de datos, para poder hacer uso de nuestra cadena que llama la base de datos.
 
+        //TODO: clase CD_Docente para manejar las operaciones relacionadas con la entidad Docente en la base de datos.
+        private CD_Conexion conexion = new CD_Conexion(); 
+       
 
         //metodo para mostrar los datos de nuestra base de dato
         public DataTable MostrarDocente()
@@ -28,6 +30,7 @@ namespace CapaDatos
             return tabla;
         }
 
+        //metodo para insertar datos a nuestra base de datos
         public void Insertar(string nombre, string titulo, string correo, string telefono)
         {
             SqlCommand comando = new SqlCommand();
@@ -43,6 +46,7 @@ namespace CapaDatos
 
         }
 
+        //metodo para editar los datos de nuestra base de datos
         public void Editar(int docenteID, string nombre, string titulo, string correo, string telefono)
         {
             SqlCommand comando = new SqlCommand();
@@ -58,19 +62,22 @@ namespace CapaDatos
             comando.Parameters.Clear();
         }
 
-       /* public void Eliminar(int docenteID)
-        {
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "EliminarDocente";
-            comando.CommandType = CommandType.StoredProcedure;
+        //El metodo eliminar se ha comentado porque no se ha implementado en la interfaz de usuario,
+        //pero se puede descomentar y utilizar si se desea agregar la funcionalidad de eliminación de docentes en el futuro.
+       
+        /* public void Eliminar(int docenteID)
+         {
+             SqlCommand comando = new SqlCommand();
+             comando.Connection = conexion.AbrirConexion();
+             comando.CommandText = "EliminarDocente";
+             comando.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@DocenteID", docenteID);
+             comando.Parameters.AddWithValue("@DocenteID", docenteID);
 
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
+             comando.ExecuteNonQuery();
+             comando.Parameters.Clear();
 
-        }*/
+         }*/
 
     }
 }

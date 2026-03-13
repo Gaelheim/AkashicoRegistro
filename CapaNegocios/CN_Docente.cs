@@ -8,9 +8,13 @@ using System.Threading.Tasks;
 
 namespace CapaNegocios
 {
-   public class CN_Docente
+    //TODO: clase CN_Docente para manejar las operaciones relacionadas con los docentes en la capa de negocios.
+    public class CN_Docente
     {
+        //TODO: instancia de la clase CD_Docente para acceder a los métodos de la capa de datos relacionados con los docentes.
         private CD_Docente objeto = new CD_Docente();
+
+        //metodo para mostrar los datos de nuestra base de dato
         public DataTable MostrarDocente()
         {
             DataTable tabla = new DataTable();
@@ -18,11 +22,13 @@ namespace CapaNegocios
             return tabla;
         }
 
+        //metodo para insertar datos a nuestra base de datos
         public void InsertarDocente(string nombre, string titulo, string correo, string telefono)
         {
             objeto.Insertar(nombre, titulo, correo, telefono);
         }
 
+        //metodo para editar los datos de nuestra base de datos
         public void EditarDocente(int docenteID, string nombre, string titulo, string correo, string telefono)
         {
             objeto.Editar(docenteID, nombre, titulo, correo, telefono);

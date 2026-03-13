@@ -4,29 +4,36 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace CapaPresentacion
 {
+    //TODO: FORM PARTICIPANTES En este formulario se manejan todas las operaciones relacionadas con los Participantes, como insertar, editar, cambiar estatus, etc.
+    //Además, se incluyen validaciones para los campos de entrada, como el formato de correo electrónico y la estructura de la cédula.
+    //También se proporcionan botones para navegar a otros formularios relacionados con cursos, programas y docentes.
     public partial class Form1 : Form
     {
-        Estudiantes estudiante = new Estudiantes();
-        private string matricula = null;
-        private bool Editar = false;
+
+        Estudiantes estudiante = new Estudiantes(); //instancia de la clase Estudiantes para acceder a sus métodos y realizar operaciones relacionadas con los estudiantes
+        private string matricula = null; //variable para almacenar la matricula del estudiante seleccionado, utilizada principalmente para las operaciones de edición y cambio de estatus
+        private bool Editar = false;  //variable booleana para determinar si se está en modo de edición o inserción, utilizada para controlar el flujo de las operaciones al guardar los datos
         public Form1()
         {
             InitializeComponent();
-            txtCorreo.KeyPress += txtCorreo_KeyPress;
-            txtCorreo.Leave += txtCorreo_Leave;
-            txtCorreo.TextChanged += txtCorreo_TextChanged;
+            txtCorreo.KeyPress += txtCorreo_KeyPress; //evento para validar los caracteres permitidos en el campo de correo electrónico, asegurando que solo se puedan ingresar caracteres válidos para un correo
+            txtCorreo.Leave += txtCorreo_Leave;      //evento para validar el formato del correo electrónico cuando el usuario sale del campo, mostrando un mensaje de error si el formato es inválido
+            txtCorreo.TextChanged += txtCorreo_TextChanged;  //evento para cambiar el color de fondo del campo de correo electrónico en tiempo real, indicando visualmente si el formato del correo es válido o no
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Mostrarestudiante();
+            Mostrarestudiante(); //llama al método para mostrar los estudiantes en el DataGridView al cargar el formulario
         }
 
+        //metodo para mostrar los estudiantes en el DataGridView, obteniendo los datos de la base de datos.
         private void Mostrarestudiante()
         {
             dataGridView1.DataSource = estudiante.MostrarEstudiantes();
         }
 
+        //metodo para insertar o editar un estudiante, dependiendo del valor de la variable Editar.
+        //Si Editar es false, se inserta un nuevo estudiante; si Editar es true, se editan los datos del estudiante seleccionado.
         private void btnInsertar_Click(object sender, EventArgs e)
         {
             if (Editar == false)
@@ -64,6 +71,8 @@ namespace CapaPresentacion
             }
         }
 
+
+        //metodo para cargar los datos del estudiante seleccionado en los campos de texto para su edición, y establecer la variable Editar en true para indicar que se está en modo de edición.
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
@@ -82,6 +91,7 @@ namespace CapaPresentacion
             }
         }
 
+        //metodo para limpiar los campos de texto después de insertar o editar un estudiante, preparando el formulario para una nueva operación.
         private void LimpiarForm()
         {
             txtNombre.Clear();
@@ -92,6 +102,7 @@ namespace CapaPresentacion
 
         }
 
+        //metodo para moficiar el estatus de un estudiante a baja academica
         private void btnBajaA_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
@@ -107,6 +118,7 @@ namespace CapaPresentacion
             }
         }
 
+        //metodo para moficiar el estatus de un estudiante a baja administrativa
         private void btnBajaM_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
@@ -122,6 +134,7 @@ namespace CapaPresentacion
             }
         }
 
+        //metodo para moficiar el estatus de un estudiante a activo
         private void btnActivar_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
@@ -137,6 +150,7 @@ namespace CapaPresentacion
             }
         }
 
+        //botones para navegar a otros formularios relacionados con cursos, programas y docentes, cerrando el formulario actual al abrir el nuevo formulario.
         private void btnCursos_Click(object sender, EventArgs e)
         {
             WF_Curso curso = new WF_Curso();
@@ -158,6 +172,8 @@ namespace CapaPresentacion
             this.Close();
         }
 
+        //eventos KeyPress para validar los campos de entrada, asegurando que solo se puedan ingresar caracteres válidos según el tipo de dato esperado
+        //(letras para nombre y apellido, formato específico para cédula, caracteres válidos para correo, etc.)
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             //usamos este KeyPress para validar que solo se puedan ingresar letras y espacios en el campo de nombre
@@ -253,14 +269,13 @@ namespace CapaPresentacion
             if (!System.Text.RegularExpressions.Regex.IsMatch(txt.Text, patron))
             {
                 MessageBox.Show("Formato inválido. Use: ejemplo@correo.com",
-                                "Error",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txt.Focus();
                 txt.SelectAll();
             }
         }
 
+        
         private void txtCorreo_TextChanged(object sender, EventArgs e)
         {
             TextBox txt = (TextBox)sender;
@@ -296,8 +311,8 @@ namespace CapaPresentacion
 
         }
 
-    
 
+        //botón para navegar al formulario de inscripciones, cerrando el formulario actual al abrir el nuevo formulario.
         private void btnInscripciones_Click(object sender, EventArgs e)
         {
             WF_Inscripciones_Centro inscripciones_Centro = new WF_Inscripciones_Centro();

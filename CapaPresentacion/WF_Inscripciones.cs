@@ -12,15 +12,18 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
+    //TODO: Formulario para gestionar las inscripciones, con funcionalidades para agregar, eliminar
+    //y mostrar inscripciones, así como navegar a otras secciones de la aplicación.
     public partial class WF_Inscripciones : Form
     {
-        CN_Inscripciones objeto = new CN_Inscripciones();
-        int idInscripcion = 0;
+        CN_Inscripciones objeto = new CN_Inscripciones(); // Instancia de la clase CN_Inscripciones para acceder a las operaciones relacionadas con las inscripciones
+        int idInscripcion = 0; // Variable para almacenar el ID de la inscripción seleccionada para eliminar
         public WF_Inscripciones()
         {
             InitializeComponent();
         }
 
+        //TODO: Evento Load del formulario para mostrar las inscripciones al cargar la ventana, así como cargar los participantes y cursos en los ComboBox.
         private void WF_Inscripciones_Load(object sender, EventArgs e)
         {
             MostrarInscripciones();
@@ -28,6 +31,7 @@ namespace CapaPresentacion
             CargarCursos();
         }
 
+        //TODO: Método para mostrar las inscripciones en el DataGridView, obteniendo los datos a través de la clase CN_Inscripciones.
         private void MostrarInscripciones()
         {
 
@@ -35,6 +39,7 @@ namespace CapaPresentacion
 
         }
 
+        //TODO: Método para cargar los participantes en el ComboBox, obteniendo los datos a través de la clase CN_Inscripciones y configurando las propiedades DisplayMember y ValueMember para mostrar la matrícula y usarla como valor.
         private void CargarParticipante()
         {
             cbxParticipante.DataSource = objeto.MostrarParticipante();
@@ -43,6 +48,7 @@ namespace CapaPresentacion
             cbxParticipante.SelectedIndex = -1;           // inicia vacío
         }
 
+        //TODO: Método para cargar los cursos en el ComboBox, obteniendo los datos a través de la clase CN_Inscripciones y configurando las propiedades DisplayMember y ValueMember para mostrar el nombre del programa y usar el código del programa como valor.
         private void CargarCursos()
         {
             cbxCurso.DataSource = objeto.MostrarPrograma();
@@ -51,6 +57,7 @@ namespace CapaPresentacion
             cbxCurso.SelectedIndex = -1;          // inicia vacío
         }
 
+        //TODO: Evento Click del botón "Guardar" para agregar una nueva inscripción, verificando que se hayan seleccionado un participante y un programa, y que la inscripción no exista previamente. Si la inscripción es válida, se guarda a través de la clase CN_Inscripciones y se actualiza la lista de inscripciones mostrada.
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
@@ -88,12 +95,14 @@ namespace CapaPresentacion
             }
         }
 
+        //TODO: Método para limpiar los ComboBox después de guardar una inscripción, restableciendo la selección a un estado vacío.
         private void LimpiarForm()
         {
             cbxParticipante.SelectedIndex = -1;
             cbxCurso.SelectedIndex = -1;
         }
 
+        //TODO: Evento Click del botón "Eliminar" para eliminar la inscripción seleccionada en el DataGridView, verificando que haya datos para eliminar. Si se elimina correctamente, se muestra un mensaje de confirmación y se actualiza la lista de inscripciones mostrada.
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (dgvInscripciones.Rows.Count > 0)
@@ -109,6 +118,7 @@ namespace CapaPresentacion
             }
         }
 
+        //TODO: Evento Click del botón "Volver al menú" para cerrar el formulario actual y abrir el formulario principal de inscripciones, permitiendo al usuario navegar de regreso al menú principal de la aplicación.
         private void button1_Click(object sender, EventArgs e) //boton para volver al menu principal
         {
             WF_Inscripciones_Centro inscripciones_Centro = new WF_Inscripciones_Centro();
